@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { IBM_Plex_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const ibmPlex = IBM_Plex_Sans({
   subsets: ["latin"],
@@ -28,8 +30,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-IN" className={`${ibmPlex.variable} ${jetbrains.variable}`}>
-      <body>
-        <SmoothScroll>{children}</SmoothScroll>
+      <body className="flex flex-col min-h-screen">
+        <SmoothScroll>
+          <Navbar />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );

@@ -5,18 +5,8 @@ export default function Home() {
   const [hoveredRow, setHoveredRow] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-white text-[#111111] font-[family-name:var(--font-mono)] selection:bg-[#FFB703] selection:text-[#111111]">
+    <div className="bg-white text-[#111111] font-[family-name:var(--font-mono)] selection:bg-[#FFB703] selection:text-[#111111]">
       
-      {/* Serious, simple Navbar */}
-      <nav className="border-b border-gray-200 px-8 py-6 bg-white">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="text-xl font-bold font-[family-name:var(--font-plex)] tracking-tight text-[#111111]">
-            Giriraaj Textiles
-          </div>
-          {/* Order Sample link removed to eliminate redundancy */}
-        </div>
-      </nav>
-
       {/* Corporate B2B Hero */}
       <section className="bg-white border-b border-gray-200 relative">
         <div className="max-w-7xl mx-auto px-8 py-20 md:py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -59,7 +49,7 @@ export default function Home() {
       </section>
 
       {/* Technical Data Section */}
-      <main className="max-w-7xl mx-auto px-8 py-24">
+      <section className="max-w-7xl mx-auto px-8 py-24">
         <header className="mb-12">
           <h2 className="text-4xl md:text-4xl font-[family-name:var(--font-plex)] font-bold tracking-tight">
             Engineered for reliability
@@ -116,42 +106,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </main>
+      </section>
 
-      {/* Expanded Functional Footer */}
-      <footer className="bg-[#111111] py-16 font-[family-name:var(--font-plex)] text-white">
-         <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
-           <div className="md:col-span-2">
-              <h2 className="text-2xl font-bold tracking-tight mb-4">Giriraaj Textiles</h2>
-              <p className="text-gray-400 max-w-sm mb-6">
-                Premium manufacturer of high-tenacity industrial bag closing thread for the cement, fertilizer, and agricultural sectors.
-              </p>
-           </div>
-           
-           <div>
-              <h3 className="text-sm font-bold uppercase tracking-widest text-gray-500 mb-4">Products</h3>
-              <ul className="space-y-3 text-gray-300">
-                 <li><a href="#" className="hover:text-white transition-colors">Bag Closing Thread</a></li>
-                 <li><a href="#" className="hover:text-white transition-colors">FIBC Sewing Thread</a></li>
-                 <li><a href="#" className="hover:text-white transition-colors">Knotless Spools</a></li>
-              </ul>
-           </div>
-
-           <div>
-              <h3 className="text-sm font-bold uppercase tracking-widest text-gray-500 mb-4">Company</h3>
-              <ul className="space-y-3 text-gray-300">
-                 <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
-                 <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-                 <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                 <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-              </ul>
-           </div>
-         </div>
-         
-         <div className="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-white/10 text-gray-500 text-sm flex flex-col md:flex-row justify-between items-center">
-            <p>&copy; {new Date().getFullYear()} Giriraaj Textiles. All rights reserved.</p>
-         </div>
-      </footer>
     </div>
   );
 }
