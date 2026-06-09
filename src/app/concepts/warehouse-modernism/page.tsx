@@ -1,0 +1,1007 @@
+"use client";
+import { useEffect } from 'react';
+import Script from 'next/script';
+
+export default function Page() {
+  useEffect(() => {
+    const initGsap = () => {
+      if (typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined') {
+        
+gsap.registerPlugin(ScrollTrigger);
+
+document.querySelectorAll('.lc-barcode').forEach(barcode => {
+  for (let i = 0; i < 20; i++) {
+    const line = document.createElement('div');
+    line.className = 'lc-barcode-line';
+    line.style.height = (8 + Math.random() * 16) + 'px';
+    line.style.width = (1 + Math.random() * 2) + 'px';
+    barcode.appendChild(line);
+  }
+});
+
+gsap.to('.hero h1', { opacity: 1, duration: 0.01, delay: 0.2 });
+gsap.from('.hero h1 .line', {
+  y: 80, opacity: 0, stagger: 0.12, duration: 0.8, delay: 0.3, ease: 'power3.out'
+});
+gsap.to('.stamp', { opacity: 1, rotation: -12, duration: 0.6, delay: 1.2, ease: 'back.out(2)' });
+gsap.to('.hero-meta', { opacity: 1, y: 0, duration: 0.8, delay: 1 });
+gsap.from('.hero-meta', { y: 20, duration: 0.8, delay: 1 });
+
+gsap.from('.label-card', {
+  opacity: 0, y: 40, stagger: 0.08, duration: 0.5,
+  scrollTrigger: { trigger: '.product-labels', start: 'top 75%' }
+});
+
+gsap.from('.warehouse-text', {
+  opacity: 0, x: -30, duration: 0.8,
+  scrollTrigger: { trigger: '.section-warehouse', start: 'top 70%' }
+});
+
+gsap.from('.wh-stat', {
+  opacity: 0, scale: 0.9, stagger: 0.1, duration: 0.5,
+  scrollTrigger: { trigger: '.warehouse-stats', start: 'top 80%' }
+});
+
+gsap.from('.dispatch-step', {
+  opacity: 0, y: 30, stagger: 0.1, duration: 0.5,
+  scrollTrigger: { trigger: '.dispatch-steps', start: 'top 75%' }
+});
+
+gsap.from('.twh-card', {
+  opacity: 0, y: 40, stagger: 0.12, duration: 0.6,
+  scrollTrigger: { trigger: '.testimonials-wh-grid', start: 'top 75%' }
+});
+
+gsap.from('.faq-wh-item', {
+  opacity: 0, y: 20, stagger: 0.06, duration: 0.4,
+  scrollTrigger: { trigger: '.faq-wh-grid', start: 'top 80%' }
+});
+
+gsap.from('.cert-wh-item', {
+  opacity: 0, scale: 0.9, stagger: 0.1, duration: 0.4,
+  scrollTrigger: { trigger: '.section-cert-wh', start: 'top 85%' }
+});
+
+      } else {
+        setTimeout(initGsap, 100);
+      }
+    };
+    initGsap();
+  }, []);
+
+  return (
+    <>
+      <style dangerouslySetInnerHTML={{ __html: `
+        @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Work+Sans:wght@300;400;500;600&display=swap');
+        
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --kraft: #E8DFD0;
+  --kraft-dark: #D4C9B8;
+  --black: #1A1A1A;
+  --red: #C41E1E;
+  --red-light: rgba(196,30,30,0.08);
+  --grey: #7A7268;
+  --light-grey: #B8AFA4;
+  --white: #F5F1EB;
+  --border: rgba(26,26,26,0.1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  background: var(--white);
+  color: var(--black);
+  overflow-x: hidden;
+}
+
+.display { font-family: 'Big Shoulders Display', sans-serif; }
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+nav ul {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+nav a {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--grey);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover { color: var(--black); }
+
+.hero {
+  min-height: 100vh;
+  padding: 100px 40px 60px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.stamp {
+  position: absolute;
+  top: 100px;
+  right: 40px;
+  width: 120px;
+  height: 120px;
+  border: 3px solid var(--red);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-12deg);
+  opacity: 0;
+}
+
+.stamp .stamp-text {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--red);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.stamp .stamp-year {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  color: var(--red);
+  line-height: 1;
+}
+
+.hero h1 {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 900;
+  font-size: clamp(60px, 12vw, 180px);
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  opacity: 0;
+}
+
+.hero h1 .outline {
+  -webkit-text-stroke: 2px var(--black);
+  color: transparent;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 48px;
+  margin-top: auto;
+  padding-top: 40px;
+  border-top: 2px solid var(--black);
+  opacity: 0;
+}
+
+.meta-block .label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-bottom: 4px;
+}
+
+.meta-block .value {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.section-labels {
+  padding: 120px 40px;
+  border-top: 2px solid var(--black);
+}
+
+.labels-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+.labels-header h2 {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 800;
+  font-size: clamp(28px, 4vw, 48px);
+  text-transform: uppercase;
+}
+
+.labels-header .code {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--grey);
+  text-transform: uppercase;
+}
+
+.product-labels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.label-card {
+  border: 2px solid var(--black);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.label-card:hover {
+  background: var(--black);
+  color: white;
+}
+
+.label-card:hover .lc-desc { color: rgba(255,255,255,0.6); }
+.label-card:hover .lc-barcode-line { background: rgba(255,255,255,0.3); }
+.label-card:hover .lc-stripe { background: var(--red); }
+
+.lc-header {
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.label-card:hover .lc-header { border-color: rgba(255,255,255,0.1); }
+
+.lc-code {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.lc-weight {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+.label-card:hover .lc-weight { color: rgba(255,255,255,0.4); }
+
+.lc-body {
+  padding: 24px;
+}
+
+.lc-name {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.lc-desc {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--grey);
+  transition: color 0.3s;
+}
+
+.lc-stripe {
+  height: 4px;
+  background: var(--black);
+  transition: background 0.3s;
+}
+
+.lc-footer {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lc-barcode {
+  display: flex;
+  gap: 1px;
+  align-items: flex-end;
+  height: 24px;
+}
+
+.lc-barcode-line {
+  width: 2px;
+  background: var(--black);
+  transition: background 0.3s;
+}
+
+.lc-range {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+
+.section-warehouse {
+  padding: 120px 40px;
+  border-top: 2px solid var(--black);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.warehouse-text .label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 16px;
+}
+
+.warehouse-text h2 {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 800;
+  font-size: clamp(28px, 4vw, 48px);
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.warehouse-text p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--grey);
+}
+
+.warehouse-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.wh-stat {
+  border: 2px solid var(--black);
+  padding: 32px;
+  text-align: center;
+}
+
+.wh-stat .num {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 900;
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1;
+}
+
+.wh-stat .num .red { color: var(--red); }
+
+.wh-stat .desc {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-top: 8px;
+}
+
+.section-dispatch {
+  padding: 120px 40px;
+  border-top: 2px solid var(--black);
+}
+
+.dispatch-header {
+  margin-bottom: 64px;
+}
+
+.dispatch-header h2 {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 800;
+  font-size: clamp(28px, 4vw, 48px);
+  text-transform: uppercase;
+}
+
+.dispatch-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+
+.dispatch-step {
+  border: 2px solid var(--black);
+  padding: 32px;
+  position: relative;
+}
+
+.dispatch-step .ds-num {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 900;
+  font-size: 48px;
+  color: var(--red);
+  opacity: 0.2;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.dispatch-step h3 {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.dispatch-step p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--grey);
+}
+
+.dispatch-step .ds-time {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.section-testimonials-wh {
+  padding: 120px 40px;
+  border-top: 2px solid var(--black);
+}
+
+.testimonials-wh-header {
+  margin-bottom: 64px;
+}
+
+.testimonials-wh-header h2 {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 800;
+  font-size: clamp(28px, 4vw, 48px);
+  text-transform: uppercase;
+}
+
+.testimonials-wh-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.twh-card {
+  border: 2px solid var(--black);
+  padding: 32px;
+}
+
+.twh-card .twh-quote {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.twh-card .twh-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.twh-card .twh-avatar {
+  width: 36px;
+  height: 36px;
+  background: var(--red);
+  opacity: 0.15;
+}
+
+.twh-card .twh-name {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.twh-card .twh-role {
+  font-size: 10px;
+  color: var(--grey);
+  letter-spacing: 0.05em;
+}
+
+.section-faq-wh {
+  padding: 120px 40px;
+  border-top: 2px solid var(--black);
+}
+
+.faq-wh-header {
+  margin-bottom: 48px;
+}
+
+.faq-wh-header h2 {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 800;
+  font-size: clamp(28px, 4vw, 48px);
+  text-transform: uppercase;
+}
+
+.faq-wh-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.faq-wh-item {
+  border: 1px solid var(--border);
+  padding: 28px;
+}
+
+.faq-wh-item .fq-q {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.faq-wh-item .fq-a {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--grey);
+}
+
+.section-cert-wh {
+  padding: 80px 40px;
+  border-top: 2px solid var(--black);
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  align-items: center;
+}
+
+.cert-wh-item {
+  border: 2px solid var(--black);
+  padding: 16px 28px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cert-wh-item .cw-badge {
+  width: 40px;
+  height: 40px;
+  background: var(--red);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+}
+
+.cert-wh-item .cw-name {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.cert-wh-item .cw-desc {
+  font-size: 10px;
+  color: var(--grey);
+  letter-spacing: 0.05em;
+}
+
+.section-cta {
+  padding: 120px 40px;
+  border-top: 2px solid var(--black);
+  text-align: center;
+}
+
+.cta-stamp {
+  display: inline-block;
+  border: 3px solid var(--black);
+  padding: 32px 64px;
+  margin-bottom: 32px;
+}
+
+.cta-stamp h2 {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 900;
+  font-size: clamp(24px, 3vw, 40px);
+  text-transform: uppercase;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 14px 40px;
+  background: var(--red);
+  color: white;
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover { background: var(--black); }
+
+footer {
+  padding: 24px 40px;
+  border-top: 2px solid var(--black);
+  display: flex;
+  justify-content: space-between;
+}
+
+footer span {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+.concept-tag {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--grey);
+  z-index: 100;
+  opacity: 0.4;
+}
+
+      `}} />
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" strategy="beforeInteractive" />
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" strategy="beforeInteractive" />
+      
+      <div className="concept-container" dangerouslySetInnerHTML={{ __html: `
+
+<nav>
+  <div class="logo">Giriraj</div>
+  <ul>
+    <li><a href="#">Stock</a></li>
+    <li><a href="#">Specs</a></li>
+    <li><a href="#">Dispatch</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="stamp" id="stamp">
+    <span class="stamp-text">Est.</span>
+    <span class="stamp-year">1992</span>
+    <span class="stamp-text">India</span>
+  </div>
+  <h1>
+    <span class="line">Giriraj</span><br>
+    <span class="line outline">Textiles</span><br>
+    <span class="line">Mfg. Co.</span>
+  </h1>
+  <div class="hero-meta">
+    <div class="meta-block">
+      <div class="label">Location</div>
+      <div class="value">Rajkot, GJ</div>
+    </div>
+    <div class="meta-block">
+      <div class="label">Material</div>
+      <div class="value">PP / PET Yarn</div>
+    </div>
+    <div class="meta-block">
+      <div class="label">Capacity</div>
+      <div class="value">12,000 T/Y</div>
+    </div>
+    <div class="meta-block">
+      <div class="label">Status</div>
+      <div class="value" style="color: var(--red);">Active</div>
+    </div>
+  </div>
+</section>
+
+<section class="section-labels">
+  <div class="labels-header">
+    <h2>Product Index</h2>
+    <span class="code">Cat. 2024-A</span>
+  </div>
+  <div class="product-labels">
+    <div class="label-card">
+      <div class="lc-header">
+        <span class="lc-code">GT-PP-001</span>
+        <span class="lc-weight">Synthetic</span>
+      </div>
+      <div class="lc-body">
+        <h3 class="lc-name">Polypropylene</h3>
+        <p class="lc-desc">High-tenacity yarn for woven sacks, geotextiles, and industrial fabrics.</p>
+      </div>
+      <div class="lc-stripe"></div>
+      <div class="lc-footer">
+        <div class="lc-barcode" id="barcode1"></div>
+        <span class="lc-range">300D—1500D</span>
+      </div>
+    </div>
+    <div class="label-card">
+      <div class="lc-header">
+        <span class="lc-code">GT-PE-002</span>
+        <span class="lc-weight">Synthetic</span>
+      </div>
+      <div class="lc-body">
+        <h3 class="lc-name">Polyester</h3>
+        <p class="lc-desc">Fully drawn yarn for technical textiles and sewing applications.</p>
+      </div>
+      <div class="lc-stripe"></div>
+      <div class="lc-footer">
+        <div class="lc-barcode" id="barcode2"></div>
+        <span class="lc-range">75D—600D</span>
+      </div>
+    </div>
+    <div class="label-card">
+      <div class="lc-header">
+        <span class="lc-code">GT-MF-003</span>
+        <span class="lc-weight">Synthetic</span>
+      </div>
+      <div class="lc-body">
+        <h3 class="lc-name">Mono Filament</h3>
+        <p class="lc-desc">Precision extruded for filtration, mesh, and screening.</p>
+      </div>
+      <div class="lc-stripe"></div>
+      <div class="lc-footer">
+        <div class="lc-barcode" id="barcode3"></div>
+        <span class="lc-range">Custom</span>
+      </div>
+    </div>
+    <div class="label-card">
+      <div class="lc-header">
+        <span class="lc-code">GT-FY-004</span>
+        <span class="lc-weight">Synthetic</span>
+      </div>
+      <div class="lc-body">
+        <h3 class="lc-name">Fibrillated</h3>
+        <p class="lc-desc">Network-structured yarn for ropes, nets, composites.</p>
+      </div>
+      <div class="lc-stripe"></div>
+      <div class="lc-footer">
+        <div class="lc-barcode" id="barcode4"></div>
+        <span class="lc-range">200D—900D</span>
+      </div>
+    </div>
+    <div class="label-card">
+      <div class="lc-header">
+        <span class="lc-code">GT-TY-005</span>
+        <span class="lc-weight">Synthetic</span>
+      </div>
+      <div class="lc-body">
+        <h3 class="lc-name">Tape Yarn</h3>
+        <p class="lc-desc">Flat tape yarn for weaving, excellent coverage.</p>
+      </div>
+      <div class="lc-stripe"></div>
+      <div class="lc-footer">
+        <div class="lc-barcode" id="barcode5"></div>
+        <span class="lc-range">500D—3000D</span>
+      </div>
+    </div>
+    <div class="label-card">
+      <div class="lc-header">
+        <span class="lc-code">GT-CB-006</span>
+        <span class="lc-weight">Custom</span>
+      </div>
+      <div class="lc-body">
+        <h3 class="lc-name">Custom Blends</h3>
+        <p class="lc-desc">Bespoke formulations engineered to specification.</p>
+      </div>
+      <div class="lc-stripe"></div>
+      <div class="lc-footer">
+        <div class="lc-barcode" id="barcode6"></div>
+        <span class="lc-range">MTO</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-warehouse">
+  <div class="warehouse-text">
+    <p class="label">Operations</p>
+    <h2>Vertically integrated. Pan-India dispatch.</h2>
+    <p>From polymer intake to finished cone, every stage happens under one roof. Orders dispatched within 72 hours to any state in India.</p>
+  </div>
+  <div class="warehouse-stats">
+    <div class="wh-stat">
+      <div class="num">30<span class="red">+</span></div>
+      <div class="desc">Years</div>
+    </div>
+    <div class="wh-stat">
+      <div class="num">12K</div>
+      <div class="desc">Tons/Year</div>
+    </div>
+    <div class="wh-stat">
+      <div class="num">200<span class="red">+</span></div>
+      <div class="desc">Clients</div>
+    </div>
+    <div class="wh-stat">
+      <div class="num">72<span class="red">hr</span></div>
+      <div class="desc">Dispatch</div>
+    </div>
+  </div>
+</section>
+
+<section class="section-dispatch">
+  <div class="dispatch-header">
+    <h2>Dispatch Protocol</h2>
+  </div>
+  <div class="dispatch-steps">
+    <div class="dispatch-step">
+      <span class="ds-num">01</span>
+      <h3>Order Received</h3>
+      <p>Order confirmed, specifications verified, production slot allocated from current inventory or scheduled.</p>
+      <span class="ds-time">Day 0</span>
+    </div>
+    <div class="dispatch-step">
+      <span class="ds-num">02</span>
+      <h3>Quality Check</h3>
+      <p>Batch tested for tenacity, elongation, denier, and shrinkage. Test certificate generated.</p>
+      <span class="ds-time">Day 1</span>
+    </div>
+    <div class="dispatch-step">
+      <span class="ds-num">03</span>
+      <h3>Packing</h3>
+      <p>Cones palletized, labeled with batch number, specs, and barcode. Shrink-wrapped for transit.</p>
+      <span class="ds-time">Day 2</span>
+    </div>
+    <div class="dispatch-step">
+      <span class="ds-num">04</span>
+      <h3>Dispatched</h3>
+      <p>Transport booked. Tracking details shared. Pan-India delivery via partnered logistics network.</p>
+      <span class="ds-time">Day 2–3</span>
+    </div>
+  </div>
+</section>
+
+<section class="section-testimonials-wh">
+  <div class="testimonials-wh-header">
+    <h2>Client Feedback</h2>
+  </div>
+  <div class="testimonials-wh-grid">
+    <div class="twh-card">
+      <p class="twh-quote">"We've ordered from Giriraj for 6 years. Never once had a quality issue. Their PP yarn runs clean on our high-speed looms with zero breakage."</p>
+      <div class="twh-author">
+        <div class="twh-avatar"></div>
+        <div>
+          <div class="twh-name">Mahesh Agarwal</div>
+          <div class="twh-role">Owner, Agarwal Woven Products, Jaipur</div>
+        </div>
+      </div>
+    </div>
+    <div class="twh-card">
+      <p class="twh-quote">"The barcode labeling system they use makes our warehouse operations so much easier. Every cone is traceable. Every batch is documented."</p>
+      <div class="twh-author">
+        <div class="twh-avatar"></div>
+        <div>
+          <div class="twh-name">Ravi Shankar</div>
+          <div class="twh-role">Warehouse Manager, PackTech India, Pune</div>
+        </div>
+      </div>
+    </div>
+    <div class="twh-card">
+      <p class="twh-quote">"Requested a custom color masterbatch integration. They delivered sample cones within 5 days and bulk within 3 weeks. Impressive turnaround."</p>
+      <div class="twh-author">
+        <div class="twh-avatar"></div>
+        <div>
+          <div class="twh-name">Deepak Modi</div>
+          <div class="twh-role">Purchase Head, Modi Ropes, Chennai</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-faq-wh">
+  <div class="faq-wh-header">
+    <h2>Common Questions</h2>
+  </div>
+  <div class="faq-wh-grid">
+    <div class="faq-wh-item">
+      <p class="fq-q">What is the minimum order quantity?</p>
+      <p class="fq-a">Standard MOQ is 500 kg per denomination. Custom blends may require higher minimums depending on setup complexity.</p>
+    </div>
+    <div class="faq-wh-item">
+      <p class="fq-q">Do you ship pan-India?</p>
+      <p class="fq-a">Yes. We supply to 18 states via partnered transport networks. Standard delivery is 3–5 working days from dispatch.</p>
+    </div>
+    <div class="faq-wh-item">
+      <p class="fq-q">Can I get samples before ordering?</p>
+      <p class="fq-a">Sample cones (2–5 kg) are available for evaluation. Contact sales with your specifications to request samples.</p>
+    </div>
+    <div class="faq-wh-item">
+      <p class="fq-q">Do you provide test certificates?</p>
+      <p class="fq-a">Every shipment includes a batch test certificate covering tenacity, elongation, denier, and shrinkage values.</p>
+    </div>
+    <div class="faq-wh-item">
+      <p class="fq-q">What payment terms do you offer?</p>
+      <p class="fq-a">Standard terms are advance or against delivery. Credit terms available for established clients with proven track record.</p>
+    </div>
+    <div class="faq-wh-item">
+      <p class="fq-q">Can you match competitor specifications?</p>
+      <p class="fq-a">Send us the spec sheet or a sample cone. Our technical team will develop an equivalent or improved formulation.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-cert-wh">
+  <div class="cert-wh-item">
+    <div class="cw-badge">ISO</div>
+    <div>
+      <div class="cw-name">ISO 9001:2015</div>
+      <div class="cw-desc">Quality Management</div>
+    </div>
+  </div>
+  <div class="cert-wh-item">
+    <div class="cw-badge">BIS</div>
+    <div>
+      <div class="cw-name">BIS Certified</div>
+      <div class="cw-desc">Indian Standards</div>
+    </div>
+  </div>
+  <div class="cert-wh-item">
+    <div class="cw-badge">SGS</div>
+    <div>
+      <div class="cw-name">SGS Tested</div>
+      <div class="cw-desc">Lab Verified</div>
+    </div>
+  </div>
+</section>
+
+<section class="section-cta">
+  <div class="cta-stamp">
+    <h2>Request a Quote</h2>
+  </div>
+  <br><br>
+  <a href="#" class="cta-btn">Contact Sales →</a>
+</section>
+
+<footer>
+  <span>Giriraj Textiles Pvt. Ltd. — Rajkot, Gujarat</span>
+  <span>Est. 1992</span>
+</footer>
+
+<div class="concept-tag">Concept 08 — Warehouse Modernism</div>
+
+
+
+
+` }} />
+    </>
+  );
+}

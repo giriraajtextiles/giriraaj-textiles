@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07 - The Quick-Sample Flow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-stone-900 text-white font-sans">
+    
+    <div class="min-h-screen grid md:grid-cols-2">
+        
+        <!-- Left: The Pitch -->
+        <div class="p-12 md:p-24 flex flex-col justify-center">
+            <h1 class="text-5xl font-black mb-6">Test the Giriraj Difference.</h1>
+            <p class="text-xl text-stone-400 mb-12 leading-relaxed">
+                We believe our yarn speaks for itself on the factory floor. 
+                Request a sample cone of our PP or Polyester yarn to test its tenacity and elongation on your own automated equipment.
+            </p>
+
+            <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                    <div class="w-8 h-8 rounded-full bg-white text-stone-900 flex items-center justify-center font-bold text-sm shrink-0">1</div>
+                    <div>
+                        <h3 class="font-bold text-lg">Select Specification</h3>
+                        <p class="text-stone-400 text-sm">Tell us the denier and material you currently use.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-8 h-8 rounded-full bg-white text-stone-900 flex items-center justify-center font-bold text-sm shrink-0">2</div>
+                    <div>
+                        <h3 class="font-bold text-lg">Express Dispatch</h3>
+                        <p class="text-stone-400 text-sm">We'll express ship a test cone from our ready inventory.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-8 h-8 rounded-full bg-[#FFB703] text-stone-900 flex items-center justify-center font-bold text-sm shrink-0">3</div>
+                    <div>
+                        <h3 class="font-bold text-lg">Run It</h3>
+                        <p class="text-stone-400 text-sm">Watch it perform with zero knots and absolute consistency.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: The Massive Form -->
+        <div class="bg-white text-stone-900 p-12 md:p-24 flex flex-col justify-center">
+            <h2 class="text-3xl font-black mb-8">Sample Request Form</h2>
+            
+            <form class="space-y-6">
+                <div>
+                    <label class="block text-sm font-bold text-stone-500 uppercase tracking-widest mb-2">Company Information</label>
+                    <input type="text" placeholder="Company Name" class="w-full border-b-2 border-stone-300 py-3 text-lg focus:outline-none focus:border-stone-900 mb-4 bg-transparent">
+                    <input type="text" placeholder="Contact Name & Phone" class="w-full border-b-2 border-stone-300 py-3 text-lg focus:outline-none focus:border-stone-900 bg-transparent">
+                </div>
+
+                <div class="pt-6">
+                    <label class="block text-sm font-bold text-stone-500 uppercase tracking-widest mb-4">Material Required</label>
+                    <div class="grid grid-cols-2 gap-4">
+                        <label class="border border-stone-300 p-4 cursor-pointer hover:border-stone-900">
+                            <input type="radio" name="material" class="mr-2"> PP Yarn
+                        </label>
+                        <label class="border border-stone-300 p-4 cursor-pointer hover:border-stone-900">
+                            <input type="radio" name="material" class="mr-2"> Polyester
+                        </label>
+                        <label class="border border-stone-300 p-4 cursor-pointer hover:border-stone-900 col-span-2">
+                            <input type="radio" name="material" class="mr-2"> Bag Closing Thread
+                        </label>
+                    </div>
+                </div>
+
+                <div class="pt-6">
+                    <label class="block text-sm font-bold text-stone-500 uppercase tracking-widest mb-2">Target Specification (Optional)</label>
+                    <input type="text" placeholder="e.g. 1500 Denier" class="w-full border-b-2 border-stone-300 py-3 text-lg focus:outline-none focus:border-stone-900 bg-transparent">
+                </div>
+
+                <button class="w-full bg-[#FFB703] text-stone-900 font-black text-lg py-5 mt-8 hover:bg-yellow-500 transition-colors uppercase tracking-widest">
+                    Submit Request
+                </button>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>

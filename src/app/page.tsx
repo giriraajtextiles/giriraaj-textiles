@@ -1,113 +1,47 @@
-"use client";
-import { useState } from "react";
+import Link from 'next/link';
 
-export default function Home() {
-  const [hoveredRow, setHoveredRow] = useState<number | null>(null);
+export default function ConceptsNavigator() {
+  const concepts = [
+    { name: "02 - Textile Architecture", path: "/concepts/textile-architecture", status: "Ported" },
+    { name: "04 - Manufacturing Poetry", path: "/concepts/manufacturing-poetry", status: "Ported" },
+    { name: "06 - National Infrastructure", path: "/concepts/national-infrastructure", status: "Ported" },
+    { name: "08 - Warehouse Modernism", path: "/concepts/warehouse-modernism", status: "Ported" },
+    { name: "11 - Monolithic Typography", path: "/concepts/monolithic-typography", status: "Ported" },
+    { name: "12 - Product as Hero", path: "/concepts/product-as-hero", status: "Ported" }
+  ];
 
   return (
-    <div className="bg-white text-[#111111] font-[family-name:var(--font-mono)] selection:bg-[#FFB703] selection:text-[#111111]">
-      
-      {/* Corporate B2B Hero */}
-      <section className="bg-white border-b border-gray-200 relative">
-        <div className="max-w-7xl mx-auto px-8 py-20 md:py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h1 className="text-5xl md:text-6xl font-[family-name:var(--font-plex)] font-bold tracking-tight leading-[1.15] mb-6 text-[#111111]">
-              Industrial bag closing thread
-            </h1>
-            <p className="text-lg font-medium max-w-lg mb-10 text-gray-600 leading-relaxed font-[family-name:var(--font-plex)]">
-              Heavy-duty spun polyester thread engineered to withstand 2000+ RPM machines and extreme supply chain abuse. Built for reliability where line stoppages cost money.
-            </p>
-          </div>
-
-          {/* Clean, refined Form Component */}
-          <div id="sample" className="bg-[#F8F8F8] border border-gray-200 p-8 md:p-10 relative">
-            <h2 className="text-2xl font-[family-name:var(--font-plex)] font-bold mb-2">Request Sample Spool</h2>
-            <p className="font-medium text-gray-500 mb-8 text-sm font-[family-name:var(--font-plex)]">Test our breaking strength on your equipment.</p>
-            
-            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-              <div>
-                <label className="block font-bold text-xs uppercase tracking-widest text-gray-500 mb-2">Company Name</label>
-                <input type="text" className="w-full border border-gray-300 bg-white p-3 text-sm focus:outline-none focus:border-[#FFB703] focus:ring-1 focus:ring-[#FFB703] transition-all" placeholder="e.g. Ultratech Cement" />
-              </div>
-              <div>
-                <label className="block font-bold text-xs uppercase tracking-widest text-gray-500 mb-2">Machine Type</label>
-                <select className="w-full border border-gray-300 bg-white p-3 text-sm focus:outline-none focus:border-[#FFB703] focus:ring-1 focus:ring-[#FFB703] transition-all appearance-none">
-                  <option>Newlong Industrial</option>
-                  <option>Union Special</option>
-                  <option>Fischbein</option>
-                  <option>Other / Portable</option>
-                </select>
-              </div>
-              <button 
-                className="w-full font-[family-name:var(--font-plex)] font-bold text-base uppercase tracking-wide py-4 mt-4 bg-[#FFB703] text-[#111111] hover:bg-[#E5A400] transition-colors"
-              >
-                Send My Sample
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-
-      {/* Technical Data Section */}
-      <section className="max-w-7xl mx-auto px-8 py-24">
-        <header className="mb-12">
-          <h2 className="text-4xl md:text-4xl font-[family-name:var(--font-plex)] font-bold tracking-tight">
-            Engineered for reliability
-          </h2>
+    <div className="bg-stone-50 min-h-screen text-stone-900 font-sans p-8 md:p-16">
+      <div className="max-w-4xl mx-auto">
+        <header className="mb-16 border-b-2 border-stone-900 pb-8">
+          <h1 className="text-4xl font-black mb-4">Concepts Navigator</h1>
+          <p className="text-xl text-stone-600">Browse the live structural concepts ported to Next.js.</p>
         </header>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Main Content Area */}
-          <div className="lg:col-span-8">
-            <p className="text-lg mb-10 max-w-3xl leading-relaxed text-gray-600 font-[family-name:var(--font-plex)]">
-              When sealing 50kg cement bags or bulk agricultural pulses at high speeds, thread failure halts the entire line. Our knotless spun polyester guarantees smooth operations.
-            </p>
-
-            {/* Restrained Interactive Spec Table */}
-            <div className="border border-gray-200">
-              <div className="bg-[#F8F8F8] text-gray-500 font-bold uppercase tracking-widest text-xs p-4 grid grid-cols-3 border-b border-gray-200">
-                <div>Metric</div>
-                <div>Value</div>
-                <div className="hidden sm:block">Impact</div>
+        <div className="grid md:grid-cols-2 gap-8">
+          {concepts.map((c) => (
+            <Link 
+              key={c.path} 
+              href={c.status === "Ported" ? c.path : "#"}
+              className={`block bg-white border p-6 transition-colors ${
+                c.status === "Ported" 
+                  ? "border-stone-300 hover:border-stone-900 hover:shadow-lg" 
+                  : "border-stone-200 opacity-60 cursor-not-allowed"
+              }`}
+            >
+              <div className="flex justify-between items-start mb-4">
+                <h2 className="text-xl font-bold">{c.name}</h2>
+                <span className={`text-xs font-bold uppercase tracking-widest px-2 py-1 ${
+                  c.status === "Ported" ? "bg-green-100 text-green-800" : "bg-stone-200 text-stone-500"
+                }`}>
+                  {c.status}
+                </span>
               </div>
-              {[
-                { metric: "Breaking Strength", value: "> 6.5 g/d", impact: "Zero burst on heavy impact." },
-                { metric: "Elongation", value: "15-20%", impact: "Absorbs drop shock." },
-                { metric: "Machine Speed", value: "2000+ RPM", impact: "Prevents line stoppage." },
-                { metric: "Lubrication", value: "Silicone Treated", impact: "Eliminates needle heat." },
-                { metric: "Knotless Spooling", value: "0 Knots", impact: "Zero thread jams." },
-              ].map((row, idx) => (
-                <div 
-                  key={idx}
-                  onMouseEnter={() => setHoveredRow(idx)}
-                  onMouseLeave={() => setHoveredRow(null)}
-                  className={`grid grid-cols-2 sm:grid-cols-3 p-4 border-b last:border-b-0 border-gray-100 font-medium transition-colors cursor-default ${hoveredRow === idx ? 'bg-[#FAFAFA]' : 'bg-white'}`}
-                >
-                  <div className="text-gray-900">{row.metric}</div>
-                  <div className="text-base font-bold">{row.value}</div>
-                  <div className="text-sm hidden sm:block text-gray-500">{row.impact}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Sidebar Area */}
-          <div className="lg:col-span-4">
-            <div className="bg-[#F8F8F8] border border-gray-200 p-8">
-              <h3 className="text-xs text-gray-500 font-bold uppercase tracking-widest mb-6 border-b border-gray-200 pb-4">
-                Compatible Equipment
-              </h3>
-              <ul className="space-y-4 text-sm font-medium text-gray-900">
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-gray-300 rounded-full"></div> Newlong Industrial</li>
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-gray-300 rounded-full"></div> Union Special</li>
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-gray-300 rounded-full"></div> Fischbein</li>
-                <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-gray-300 rounded-full"></div> Yao Han</li>
-              </ul>
-            </div>
-          </div>
+              <p className="text-stone-500 text-sm font-mono">Route: {c.path}</p>
+            </Link>
+          ))}
         </div>
-      </section>
-
+      </div>
     </div>
   );
 }

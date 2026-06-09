@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 - The Command Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-stone-100 text-stone-900 font-sans flex h-screen overflow-hidden">
+    
+    <!-- Permanent Sidebar -->
+    <aside class="w-64 bg-stone-900 text-stone-300 flex flex-col border-r border-stone-800">
+        <div class="p-6 border-b border-stone-800">
+            <h1 class="text-xl font-black text-white tracking-widest">GIRIRAJ</h1>
+            <p class="text-xs text-stone-500 font-mono mt-1">CLIENT PORTAL</p>
+        </div>
+        
+        <nav class="flex-grow py-6">
+            <ul class="space-y-1">
+                <li><a href="#" class="block px-6 py-2 bg-stone-800 text-white border-l-4 border-[#FFB703] font-bold">Yarn Specifications</a></li>
+                <li><a href="#" class="block px-6 py-2 hover:bg-stone-800 hover:text-white transition-colors">Quality Reports</a></li>
+                <li><a href="#" class="block px-6 py-2 hover:bg-stone-800 hover:text-white transition-colors">Dispatch Logistics</a></li>
+                <li><a href="#" class="block px-6 py-2 hover:bg-stone-800 hover:text-white transition-colors">Packaging Standards</a></li>
+            </ul>
+        </nav>
+
+        <div class="p-6 border-t border-stone-800">
+            <button class="w-full bg-[#FFB703] text-stone-900 font-bold py-3 text-sm hover:bg-white transition-colors">Order Samples</button>
+        </div>
+    </aside>
+
+    <!-- Reading Pane -->
+    <main class="flex-grow overflow-y-auto bg-white">
+        
+        <!-- Document Header -->
+        <header class="p-10 border-b border-stone-200">
+            <div class="flex gap-2 text-xs font-mono text-stone-500 mb-4">
+                <span>DOC-SPEC-01</span>
+                <span>•</span>
+                <span>PUBLIC</span>
+            </div>
+            <h2 class="text-4xl font-black mb-4">Synthetic Yarn Specifications</h2>
+            <p class="text-xl text-stone-600 max-w-3xl leading-relaxed">
+                Complete engineering limits and testing parameters for Giriraj PP and Polyester yarns. Designed for B2B procurement evaluation.
+            </p>
+        </header>
+
+        <!-- Document Body -->
+        <div class="p-10 max-w-4xl">
+            
+            <section class="mb-12">
+                <h3 class="text-2xl font-bold mb-6 pb-2 border-b-2 border-stone-900">1. Polypropylene (PP) Yarn</h3>
+                <p class="mb-6 text-stone-700 leading-relaxed">Manufactured using 100% virgin polymer to ensure maximum tensile strength for heavy-duty woven sacks (Cement, Fertilizer, FIBC).</p>
+                
+                <div class="bg-stone-50 border border-stone-200 p-6 rounded-sm font-mono text-sm">
+                    <div class="grid grid-cols-2 gap-y-4">
+                        <div class="text-stone-500">Available Denier</div><div class="font-bold text-stone-900">1000D - 6000D</div>
+                        <div class="text-stone-500">Breaking Strength</div><div class="font-bold text-stone-900">> 6.5 g/d</div>
+                        <div class="text-stone-500">Elongation</div><div class="font-bold text-stone-900">15% - 20%</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-12">
+                <h3 class="text-2xl font-bold mb-6 pb-2 border-b-2 border-stone-900">2. Bag Closing Thread</h3>
+                <p class="mb-6 text-stone-700 leading-relaxed">Engineered for high-speed automated packaging lines. Strictly zero-knot winding to prevent needle breakage and production halts.</p>
+                
+                <div class="bg-stone-50 border border-stone-200 p-6 rounded-sm font-mono text-sm">
+                    <div class="grid grid-cols-2 gap-y-4">
+                        <div class="text-stone-500">Structure</div><div class="font-bold text-stone-900">Multi-filament 3-Ply / 4-Ply</div>
+                        <div class="text-stone-500">Treatment</div><div class="font-bold text-stone-900">Silicone Lubricated</div>
+                        <div class="text-stone-500">Defect Tolerance</div><div class="font-bold text-stone-900">0 Knots per Spool</div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
