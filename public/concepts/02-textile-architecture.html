@@ -1109,5 +1109,62 @@ gsap.from('.blog-card', {
   scrollTrigger: { trigger: '.blog-grid', start: 'top 75%' }
 });
 </script>
+
+<!-- INJECTED CONCEPT NAV -->
+<style>
+  .concept-bottom-nav {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 8px 16px;
+    border-radius: 40px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    z-index: 99999;
+    font-family: system-ui, -apple-system, sans-serif;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+  .concept-bottom-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+  }
+  .concept-bottom-nav a:hover {
+    background: rgba(255,255,255,0.2);
+  }
+  .concept-bottom-nav a.active {
+    background: white;
+    color: black;
+  }
+  .concept-bottom-nav .nav-home {
+    padding: 0 12px;
+    border-radius: 20px;
+    width: auto;
+    margin-right: 8px;
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+</style>
+<div class="concept-bottom-nav">
+  <a href="/" class="nav-home">Home</a>
+  <a href="/concepts/02-textile-architecture.html" class="nav-btn nav-btn-02 active">1</a><a href="/concepts/04-manufacturing-poetry.html" class="nav-btn nav-btn-04">2</a><a href="/concepts/06-national-infrastructure.html" class="nav-btn nav-btn-06">3</a><a href="/concepts/08-warehouse-modernism.html" class="nav-btn nav-btn-08">4</a><a href="/concepts/11-monolithic-typography.html" class="nav-btn nav-btn-11">5</a><a href="/concepts/12-product-as-hero.html" class="nav-btn nav-btn-12">6</a>
+</div>
+<!-- END INJECTED CONCEPT NAV -->
 </body>
+
 </html>
