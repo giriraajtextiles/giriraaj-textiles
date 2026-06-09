@@ -639,6 +639,68 @@ footer span {
   z-index: 100;
   opacity: 0.4;
 }
+
+/* INJECTED MOBILE RESPONSIVE CSS */
+@media (max-width: 768px) {
+  body, html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  h1 { font-size: 3rem !important; line-height: 1.1 !important; }
+  h2 { font-size: 2.2rem !important; line-height: 1.2 !important; }
+  h3 { font-size: 1.4rem !important; }
+  p { font-size: 1rem !important; }
+  
+  .hero-title, .hero h1 { font-size: 12vw !important; }
+  
+  section, .hero, .section-process, .section-industries, header, footer { 
+    padding: 40px 20px !important; 
+    height: auto !important;
+    min-height: auto !important;
+  }
+  
+  [class*="-grid"], [class*="-row"], .hero, .hero-content, .pm-row, .materials-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+    width: 100% !important;
+  }
+  
+  .concept-bottom-nav {
+    flex-direction: row !important;
+    width: 90% !important;
+    padding: 8px !important;
+    gap: 4px !important;
+    bottom: 16px !important;
+  }
+  
+  .concept-bottom-nav a {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 12px !important;
+  }
+  .concept-bottom-nav .nav-home {
+    width: auto !important;
+    padding: 0 10px !important;
+  }
+  
+  img, svg, .hero-visual, [class*="-visual"] {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Specific hide overrides for purely desktop background elements that break mobile */
+  .weave-grid, .poem-threads, .hero-grid-lines {
+    opacity: 0.2 !important;
+  }
+  
+  [class*="-item"], [class*="-card"] {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1077,6 +1139,68 @@ gsap.utils.toArray('.cta-circle').forEach((circle, i) => {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
+
+/* INJECTED MOBILE RESPONSIVE CSS */
+@media (max-width: 768px) {
+  body, html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  h1 { font-size: 3rem !important; line-height: 1.1 !important; }
+  h2 { font-size: 2.2rem !important; line-height: 1.2 !important; }
+  h3 { font-size: 1.4rem !important; }
+  p { font-size: 1rem !important; }
+  
+  .hero-title, .hero h1 { font-size: 12vw !important; }
+  
+  section, .hero, .section-process, .section-industries, header, footer { 
+    padding: 40px 20px !important; 
+    height: auto !important;
+    min-height: auto !important;
+  }
+  
+  [class*="-grid"], [class*="-row"], .hero, .hero-content, .pm-row, .materials-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+    width: 100% !important;
+  }
+  
+  .concept-bottom-nav {
+    flex-direction: row !important;
+    width: 90% !important;
+    padding: 8px !important;
+    gap: 4px !important;
+    bottom: 16px !important;
+  }
+  
+  .concept-bottom-nav a {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 12px !important;
+  }
+  .concept-bottom-nav .nav-home {
+    width: auto !important;
+    padding: 0 10px !important;
+  }
+  
+  img, svg, .hero-visual, [class*="-visual"] {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Specific hide overrides for purely desktop background elements that break mobile */
+  .weave-grid, .poem-threads, .hero-grid-lines {
+    opacity: 0.2 !important;
+  }
+  
+  [class*="-item"], [class*="-card"] {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}
+
 </style>
 <div class="concept-bottom-nav">
   <a href="/" class="nav-home">Home</a>
