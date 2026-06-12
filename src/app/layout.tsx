@@ -5,6 +5,43 @@ export const metadata: Metadata = {
   title: "Giriraaj Textiles — Building India's textile backbone",
   description:
     "Giriraaj Textiles supplies high-tenacity polyester and polypropylene yarn to packaging, agriculture, and industry across India. Every strand engineered with precision.",
+  keywords: ["polypropylene yarn", "polyester yarn", "industrial yarn", "geotextiles", "fibrillated yarn", "monofilament", "woven sacks", "FIBC bags", "India yarn manufacturer"],
+  authors: [{ name: "Giriraaj Textiles" }],
+  creator: "Giriraaj Textiles",
+  publisher: "Giriraaj Textiles",
+  openGraph: {
+    title: "Giriraaj Textiles — Industrial Strength Yarn",
+    description: "Every strand engineered with precision. High-tenacity synthetic yarn manufacturing powering India's textile backbone.",
+    url: "https://giriraajtextiles.com",
+    siteName: "Giriraaj Textiles",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Giriraaj Textiles Industrial Yarn",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Giriraaj Textiles — Industrial Strength Yarn",
+    description: "High-tenacity synthetic yarn manufacturing powering India's textile backbone.",
+    images: ["/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({

@@ -113,7 +113,7 @@ gsap.utils.toArray<HTMLElement>('.cta-circle').forEach((circle, i) => {
   <div className="product-hero-grid">
     <div className="ph-card">
       <div className="ph-card-bg">
-        <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
+        <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" role="presentation">
           <defs>
             <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#C4572A" stopOpacity="0.03"/>
@@ -135,7 +135,7 @@ gsap.utils.toArray<HTMLElement>('.cta-circle').forEach((circle, i) => {
     </div>
     <div className="ph-card">
       <div className="ph-card-bg">
-        <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
+        <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" role="presentation">
           <defs>
             <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#1A1A1A" stopOpacity="0.02"/>
@@ -155,7 +155,7 @@ gsap.utils.toArray<HTMLElement>('.cta-circle').forEach((circle, i) => {
     </div>
     <div className="ph-card">
       <div className="ph-card-bg">
-        <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
+        <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" role="presentation">
           <defs>
             <linearGradient id="g3" x1="0%" y1="100%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#C4572A" stopOpacity="0.04"/>
@@ -188,7 +188,7 @@ gsap.utils.toArray<HTMLElement>('.cta-circle').forEach((circle, i) => {
     <div className="pa-dot" style={{ top: 'calc(40% - 6px)', left: '50%' }}></div>
     <div className="pa-dot" style={{ top: 'calc(60% - 6px)', left: '75%' }}></div>
     <div className="pa-dot" style={{ top: 'calc(80% - 6px)', left: '35%' }}></div>
-    <svg style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', pointerEvents: 'none' }} viewBox="0 0 400 400" preserveAspectRatio="none">
+    <svg style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', pointerEvents: 'none' }} viewBox="0 0 400 400" preserveAspectRatio="none" aria-hidden="true" role="presentation">
       <path d="M80,80 L200,160 L300,240 L140,320" fill="none" stroke="#C4572A" strokeWidth="0.5" opacity="0.2" strokeDasharray="4 4"/>
     </svg>
   </div>
