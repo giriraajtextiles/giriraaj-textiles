@@ -61,6 +61,16 @@ export default function Home() {
         scrollTrigger: { trigger: '.section-cert-ph', start: 'top 85%' }
       });
 
+      gsap.from('.section-infra-ph h2, .section-infra-ph p, .infra-stat', {
+        opacity: 0, y: 30, stagger: 0.1, duration: 0.6,
+        scrollTrigger: { trigger: '.section-infra-ph', start: 'top 75%' }
+      });
+
+      gsap.from('.section-contact-ph .contact-info, .section-contact-ph form', {
+        opacity: 0, y: 30, stagger: 0.2, duration: 0.6,
+        scrollTrigger: { trigger: '.section-contact-ph', start: 'top 75%' }
+      });
+
       gsap.utils.toArray<HTMLElement>('.cta-circle').forEach((circle, i) => {
         gsap.to(circle, {
           rotation: i % 2 === 0 ? 360 : -360,
@@ -215,6 +225,28 @@ export default function Home() {
         <div className="line"></div>
         <div className="dot"></div>
         <span>Ship</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section className="section-infra-ph">
+  <div className="infra-ph-content">
+    <p className="label">Infrastructure</p>
+    <h2>State-of-the-art facility</h2>
+    <p>Operating out of a newly commissioned, next-generation manufacturing plant in Beawar, Rajasthan. We built Giriraaj Textiles from the ground up to feature the most advanced extrusion and winding technology available today.</p>
+    <div className="infra-stats">
+      <div className="infra-stat">
+        <span className="stat-num">1</span>
+        <span className="stat-label">Year of Growth</span>
+      </div>
+      <div className="infra-stat">
+        <span className="stat-num">100%</span>
+        <span className="stat-label">Automated Winding</span>
+      </div>
+      <div className="infra-stat">
+        <span className="stat-num">Zero</span>
+        <span className="stat-label">Compromise Quality</span>
       </div>
     </div>
   </div>
@@ -388,9 +420,39 @@ export default function Home() {
   <a href="#" className="cta-btn">Connect with us</a>
 </section>
 
+<section className="section-contact-ph">
+  <div className="contact-ph-grid">
+    <div className="contact-info">
+      <p className="label">Partner with us</p>
+      <h2>Ready to upgrade your supply chain?</h2>
+      <p>Directly contact our engineering team in Beawar for technical data sheets, MOQs, and custom formulations.</p>
+      <div className="contact-methods">
+        <p><strong>Email:</strong> sales@giriraajtextiles.com</p>
+        <p><strong>Phone:</strong> +91 98765 43210</p>
+        <p><strong>Location:</strong> Beawar, Rajasthan, India</p>
+      </div>
+    </div>
+    <div className="contact-form-container">
+      <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+        <input type="text" placeholder="Company Name" required />
+        <input type="email" placeholder="Work Email" required />
+        <select required defaultValue="">
+          <option value="" disabled>Select Yarn Type</option>
+          <option value="pp">Polypropylene (PP) Yarn</option>
+          <option value="pet">Polyester (PET) Yarn</option>
+          <option value="mono">Mono Filament</option>
+          <option value="fibrillated">Fibrillated / Tape</option>
+        </select>
+        <textarea placeholder="Tell us about your requirements (Denier, application, monthly volume)..." rows={4}></textarea>
+        <button type="submit" className="submit-btn">Request Quote</button>
+      </form>
+    </div>
+  </div>
+</section>
+
 <footer>
-  <span>Giriraj Textiles Pvt. Ltd.</span>
-  <span>Rajkot, Gujarat, India</span>
+  <span>Giriraaj Textiles Pvt. Ltd.</span>
+  <span>Beawar, Rajasthan, India</span>
 </footer>
 
 <div className="concept-tag">Concept 12 — Product as Hero</div>

@@ -177,7 +177,7 @@ nav a:hover { color: var(--charcoal); }
 
 .ph-card {
   position: relative;
-  aspect-ratio: 3/4;
+  min-height: 480px;
   border: 1px solid var(--border);
   overflow: hidden;
   display: flex;
@@ -632,13 +632,74 @@ footer span {
 }
 
 
+.section-infra-ph {
+  padding: 120px 40px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.infra-ph-content { max-width: 800px; margin: 0 auto; }
+.infra-ph-content .label {
+  font-size: 9px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--warm); margin-bottom: 24px;
+}
+.infra-ph-content h2 {
+  font-family: 'Sora', sans-serif; font-weight: 700; font-size: clamp(32px, 4vw, 48px); margin-bottom: 24px;
+}
+.infra-ph-content p {
+  font-weight: 300; font-size: 15px; line-height: 1.7; color: var(--grey); margin-bottom: 64px;
+}
+.infra-stats {
+  display: flex; justify-content: center; gap: 80px;
+}
+.infra-stat {
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+}
+.infra-stat .stat-num {
+  font-family: 'Sora', sans-serif; font-weight: 700; font-size: 40px; color: var(--charcoal);
+}
+.infra-stat .stat-label {
+  font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--grey);
+}
+
+.section-contact-ph {
+  padding: 120px 40px;
+  border-top: 1px solid var(--border);
+}
+.contact-ph-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; max-width: 1200px; margin: 0 auto; align-items: center;
+}
+.contact-info .label {
+  font-size: 9px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--warm); margin-bottom: 24px;
+}
+.contact-info h2 {
+  font-family: 'Sora', sans-serif; font-weight: 700; font-size: clamp(32px, 4vw, 48px); margin-bottom: 24px; line-height: 1.2;
+}
+.contact-info p {
+  font-weight: 300; font-size: 15px; line-height: 1.7; color: var(--grey); margin-bottom: 48px; max-width: 440px;
+}
+.contact-methods p { margin-bottom: 16px; color: var(--charcoal); }
+.contact-methods strong { font-weight: 600; margin-right: 8px; color: var(--grey); }
+
+.contact-form {
+  display: flex; flex-direction: column; gap: 24px;
+}
+.contact-form input, .contact-form select, .contact-form textarea {
+  width: 100%; padding: 16px 24px; border: 1px solid var(--border); font-family: 'Manrope', sans-serif; font-size: 14px; background: transparent; transition: border-color 0.3s;
+}
+.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus {
+  outline: none; border-color: var(--warm);
+}
+.submit-btn {
+  padding: 18px 48px; background: var(--charcoal); color: white; border: none; font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.05em; cursor: pointer; transition: background 0.3s; width: 100%;
+}
+.submit-btn:hover { background: var(--warm); }
+
 /* Responsive */
 @media (max-width: 768px) {
   body, html { overflow-x: hidden; width: 100%; }
   h1 { font-size: 3rem !important; line-height: 1.1 !important; }
   h2 { font-size: 2.2rem !important; line-height: 1.2 !important; }
   section, .hero, .section-process-abstract, footer { padding: 40px 20px !important; height: auto !important; }
-  .product-hero-grid, .process-abstract-text, .apps-ph-grid, .testimonials-ph-grid { display: flex !important; flex-direction: column !important; gap: 32px !important; }
+  .product-hero-grid, .process-abstract-text, .apps-ph-grid, .testimonials-ph-grid, .contact-ph-grid, .infra-stats { display: flex !important; flex-direction: column !important; gap: 32px !important; }
   .yarn-form { transform: scale(0.6) translate(-50%, -50%); position: relative; height: 300px; }
   .ph-card, .app-ph-item, .tph-card { width: 100% !important; margin: 0 !important; }
   .section-process-abstract { display: flex !important; flex-direction: column !important; }
