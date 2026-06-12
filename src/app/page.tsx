@@ -1,7 +1,8 @@
 export default function ConceptsNavigator() {
   const concepts = [
     { name: "02 - Textile Architecture", path: "/concepts/02-textile-architecture.html", status: "Live" },
-    { name: "12 - Product as Hero", path: "/concepts/12-product-as-hero.html", status: "Live" }
+    { name: "12 - Product as Hero", path: "/concepts/12-product-as-hero.html", status: "Live" },
+    { name: "13 - Industrial Hero (Synthesis)", path: "/concepts/13-industrial-hero.html", status: "New" }
   ];
 
   return (
@@ -26,6 +27,7 @@ export default function ConceptsNavigator() {
               <div className="flex justify-between items-start mb-4">
                 <h2 className="text-xl font-bold">{c.name}</h2>
                 <span className={`text-xs font-bold uppercase tracking-widest px-2 py-1 ${
+                  c.status === "New" ? "bg-orange-100 text-orange-800" :
                   c.status === "Live" ? "bg-green-100 text-green-800" : "bg-stone-200 text-stone-500"
                 }`}>
                   {c.status}

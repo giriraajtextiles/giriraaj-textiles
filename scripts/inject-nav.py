@@ -5,7 +5,8 @@ public_concepts_dir = "public/concepts"
 
 files = [
     ("02-textile-architecture.html", "02", "1"),
-    ("12-product-as-hero.html", "12", "2")
+    ("12-product-as-hero.html", "12", "2"),
+    ("13-industrial-hero.html", "13", "3")
 ]
 
 # Generate the navigation HTML
