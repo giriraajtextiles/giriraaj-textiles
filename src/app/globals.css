@@ -59,7 +59,7 @@ nav a:hover { color: var(--charcoal); }
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 80px 40px 60px;
+  padding: 120px 40px 80px;
 }
 
 .hero-visual {
@@ -165,7 +165,7 @@ nav a:hover { color: var(--charcoal); }
 }
 
 .section-product-hero {
-  padding: 80px 40px;
+  padding: 120px 40px;
   border-top: 1px solid var(--border);
 }
 
@@ -243,11 +243,11 @@ nav a:hover { color: var(--charcoal); }
 .ph-card:hover .ph-name { color: var(--warm); }
 
 .section-process-abstract {
-  padding: 100px 40px;
+  padding: 160px 40px;
   border-top: 1px solid var(--border);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 80px;
   align-items: center;
 }
 
@@ -332,12 +332,12 @@ nav a:hover { color: var(--charcoal); }
 }
 
 .section-apps-ph {
-  padding: 80px 40px;
+  padding: 120px 40px;
   border-top: 1px solid var(--border);
 }
 
 .apps-ph-header {
-  margin-bottom: 40px;
+  margin-bottom: 64px;
 }
 
 .apps-ph-header .label {
@@ -386,12 +386,12 @@ nav a:hover { color: var(--charcoal); }
 }
 
 .section-testimonials-ph {
-  padding: 80px 40px;
+  padding: 120px 40px;
   border-top: 1px solid var(--border);
 }
 
 .testimonials-ph-header {
-  margin-bottom: 40px;
+  margin-bottom: 64px;
 }
 
 .testimonials-ph-header h2 {
@@ -449,7 +449,7 @@ nav a:hover { color: var(--charcoal); }
 }
 
 .section-specs-ph {
-  padding: 80px 40px;
+  padding: 120px 40px;
   border-top: 1px solid var(--border);
 }
 
@@ -514,7 +514,7 @@ nav a:hover { color: var(--charcoal); }
 }
 
 .section-cert-ph {
-  padding: 60px 40px;
+  padding: 80px 40px;
   border-top: 1px solid var(--border);
   display: flex;
   justify-content: center;
@@ -555,7 +555,7 @@ nav a:hover { color: var(--charcoal); }
 }
 
 .section-cta-final {
-  padding: 100px 40px;
+  padding: 160px 40px;
   border-top: 1px solid var(--border);
   text-align: center;
 }
@@ -563,7 +563,7 @@ nav a:hover { color: var(--charcoal); }
 .cta-visual {
   width: 200px;
   height: 200px;
-  margin: 0 auto 32px;
+  margin: 0 auto 48px;
   position: relative;
 }
 
