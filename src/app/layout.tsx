@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://giriraajtextiles.com"),
   title: "Giriraaj Textiles — Building India's textile backbone",
   description:
     "Giriraaj Textiles supplies high-tenacity polyester and polypropylene yarn to packaging, agriculture, and industry across India. Every strand engineered with precision.",
