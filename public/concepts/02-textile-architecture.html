@@ -1172,6 +1172,7 @@ gsap.from('.blog-card', {
 });
 </script>
 
+
 <!-- INJECTED CONCEPT NAV -->
 <style>
   .concept-bottom-nav {
@@ -1197,12 +1198,12 @@ gsap.from('.blog-card', {
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
-    width: 32px;
+    padding: 0 16px;
     height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    border-radius: 20px;
     transition: all 0.2s ease;
   }
   .concept-bottom-nav a:hover {
@@ -1213,7 +1214,7 @@ gsap.from('.blog-card', {
     color: black;
   }
   .concept-bottom-nav .nav-home {
-    padding: 0 12px;
+    padding: 0 16px;
     border-radius: 20px;
     width: auto;
     margin-right: 8px;
@@ -1221,74 +1222,13 @@ gsap.from('.blog-card', {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
-
-/* INJECTED MOBILE RESPONSIVE CSS */
-@media (max-width: 768px) {
-  body, html {
-    overflow-x: hidden;
-    width: 100%;
-  }
-  
-  h1 { font-size: 3rem !important; line-height: 1.1 !important; }
-  h2 { font-size: 2.2rem !important; line-height: 1.2 !important; }
-  h3 { font-size: 1.4rem !important; }
-  p { font-size: 1rem !important; }
-  
-  .hero-title, .hero h1 { font-size: 12vw !important; }
-  
-  section, .hero, .section-process, .section-industries, header, footer { 
-    padding: 40px 20px !important; 
-    height: auto !important;
-    min-height: auto !important;
-  }
-  
-  [class*="-grid"], [class*="-row"], .hero, .hero-content, .pm-row, .materials-list {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 32px !important;
-    width: 100% !important;
-  }
-  
-  .concept-bottom-nav {
-    flex-direction: row !important;
-    width: 90% !important;
-    padding: 8px !important;
-    gap: 4px !important;
-    bottom: 16px !important;
-  }
-  
-  .concept-bottom-nav a {
-    width: 28px !important;
-    height: 28px !important;
-    font-size: 12px !important;
-  }
-  .concept-bottom-nav .nav-home {
-    width: auto !important;
-    padding: 0 10px !important;
-  }
-  
-  img, svg, .hero-visual, [class*="-visual"] {
-    max-width: 100% !important;
-    height: auto !important;
-  }
-  
-  /* Specific hide overrides for purely desktop background elements that break mobile */
-  .weave-grid, .poem-threads, .hero-grid-lines {
-    opacity: 0.2 !important;
-  }
-  
-  [class*="-item"], [class*="-card"] {
-    width: 100% !important;
-    margin: 0 !important;
-  }
-}
-
 </style>
 <div class="concept-bottom-nav">
   <a href="/" class="nav-home">Home</a>
-  <a href="/concepts/02-textile-architecture.html" class="nav-btn nav-btn-02 active">1</a><a href="/concepts/04-manufacturing-poetry.html" class="nav-btn nav-btn-04">2</a><a href="/concepts/06-national-infrastructure.html" class="nav-btn nav-btn-06">3</a><a href="/concepts/08-warehouse-modernism.html" class="nav-btn nav-btn-08">4</a><a href="/concepts/11-monolithic-typography.html" class="nav-btn nav-btn-11">5</a><a href="/concepts/12-product-as-hero.html" class="nav-btn nav-btn-12">6</a>
+  <a href="/concepts/02-textile-architecture.html" class="nav-btn nav-btn-02 active">Concept 1</a><a href="/concepts/12-product-as-hero.html" class="nav-btn nav-btn-12">Concept 2</a>
 </div>
 <!-- END INJECTED CONCEPT NAV -->
 </body>
+
 
 </html>

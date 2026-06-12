@@ -4,19 +4,15 @@ import re
 public_concepts_dir = "public/concepts"
 
 files = [
-    ("02-textile-architecture.html", "02"),
-    ("04-manufacturing-poetry.html", "04"),
-    ("06-national-infrastructure.html", "06"),
-    ("08-warehouse-modernism.html", "08"),
-    ("11-monolithic-typography.html", "11"),
-    ("12-product-as-hero.html", "12")
+    ("02-textile-architecture.html", "02", "1"),
+    ("12-product-as-hero.html", "12", "2")
 ]
 
 # Generate the navigation HTML
 nav_links = ""
-for i, (f_name, label) in enumerate(files):
+for f_name, label, display_num in files:
     # Highlight the current page by using a different style (we'll replace a placeholder for the active one)
-    nav_links += f'<a href="/concepts/{f_name}" class="nav-btn nav-btn-{label}">{i+1}</a>'
+    nav_links += f'<a href="/concepts/{f_name}" class="nav-btn nav-btn-{label}">Concept {display_num}</a>'
 
 nav_html_template = f"""
 <!-- INJECTED CONCEPT NAV -->
@@ -44,12 +40,12 @@ nav_html_template = f"""
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
-    width: 32px;
+    padding: 0 16px;
     height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    border-radius: 20px;
     transition: all 0.2s ease;
   }}
   .concept-bottom-nav a:hover {{
@@ -60,7 +56,7 @@ nav_html_template = f"""
     color: black;
   }}
   .concept-bottom-nav .nav-home {{
-    padding: 0 12px;
+    padding: 0 16px;
     border-radius: 20px;
     width: auto;
     margin-right: 8px;
@@ -77,7 +73,7 @@ nav_html_template = f"""
 </body>
 """
 
-for f_name, label in files:
+for f_name, label, _ in files:
     path = os.path.join(public_concepts_dir, f_name)
     with open(path, "r") as file:
         content = file.read()
