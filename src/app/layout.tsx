@@ -1,26 +1,10 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import SmoothScroll from "@/components/SmoothScroll";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-
-const ibmPlex = IBM_Plex_Sans({
-  subsets: ["latin"],
-  variable: "--font-plex",
-  weight: ["400", "500", "600", "700"],
-});
-
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  weight: ["400", "500", "700", "800"],
-});
 
 export const metadata: Metadata = {
-  title: "Giriraaj Textiles — Premium Yarn for Industrial Packaging",
+  title: "Giriraaj Textiles — Building India's textile backbone",
   description:
-    "Giriraaj Textiles supplies high-tenacity polyester and polypropylene yarn to packaging, agriculture, and industry across India. Consistent quality, reliable supply.",
+    "Giriraaj Textiles supplies high-tenacity polyester and polypropylene yarn to packaging, agriculture, and industry across India. Every strand engineered with precision.",
 };
 
 export default function RootLayout({
@@ -29,13 +13,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-IN" className={`${ibmPlex.variable} ${jetbrains.variable}`}>
-      <body className="flex flex-col min-h-screen">
-        <SmoothScroll>
-          <Navbar />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </SmoothScroll>
+    <html lang="en-IN">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;400;600;700;800&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+      </head>
+      <body>
+        {children}
       </body>
     </html>
   );
