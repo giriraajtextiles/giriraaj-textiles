@@ -7,72 +7,72 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 export default function Home() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    // ScrollTrigger registered
-gsap.to('.hero-content .overline', { opacity: 1, y: 0, duration: 0.6, delay: 0.3 });
-gsap.from('.hero-content .overline', { y: 15, duration: 0.6, delay: 0.3 });
-gsap.to('.hero-content h1', { opacity: 1, y: 0, duration: 1, delay: 0.5 });
-gsap.from('.hero-content h1', { y: 30, duration: 1, delay: 0.5 });
-gsap.to('.hero-content .sub', { opacity: 1, y: 0, duration: 0.8, delay: 0.8 });
-gsap.from('.hero-content .sub', { y: 20, duration: 0.8, delay: 0.8 });
+    
+    let ctx = gsap.context(() => {
+      gsap.to('.hero-content .overline', { opacity: 1, y: 0, duration: 0.6, delay: 0.3 });
+      gsap.from('.hero-content .overline', { y: 15, duration: 0.6, delay: 0.3 });
+      gsap.to('.hero-content h1', { opacity: 1, y: 0, duration: 1, delay: 0.5 });
+      gsap.from('.hero-content h1', { y: 30, duration: 1, delay: 0.5 });
+      gsap.to('.hero-content .sub', { opacity: 1, y: 0, duration: 0.8, delay: 0.8 });
+      gsap.from('.hero-content .sub', { y: 20, duration: 0.8, delay: 0.8 });
 
-gsap.from('.ph-card', {
-  opacity: 0, y: 60, stagger: 0.15, duration: 0.8,
-  scrollTrigger: { trigger: '.product-hero-grid', start: 'top 75%' }
-});
+      gsap.from('.ph-card', {
+        opacity: 0, y: 60, stagger: 0.15, duration: 0.8,
+        scrollTrigger: { trigger: '.product-hero-grid', start: 'top 75%' }
+      });
 
-gsap.from('.process-abstract-visual', {
-  opacity: 0, x: -30, duration: 0.8,
-  scrollTrigger: { trigger: '.section-process-abstract', start: 'top 70%' }
-});
+      gsap.from('.process-abstract-visual', {
+        opacity: 0, x: -30, duration: 0.8,
+        scrollTrigger: { trigger: '.section-process-abstract', start: 'top 70%' }
+      });
 
-gsap.from('.process-abstract-text', {
-  opacity: 0, x: 30, duration: 0.8, delay: 0.15,
-  scrollTrigger: { trigger: '.section-process-abstract', start: 'top 70%' }
-});
+      gsap.from('.process-abstract-text', {
+        opacity: 0, x: 30, duration: 0.8, delay: 0.15,
+        scrollTrigger: { trigger: '.section-process-abstract', start: 'top 70%' }
+      });
 
-gsap.from('.pa-dot', {
-  scale: 0, stagger: 0.2, duration: 0.5,
-  scrollTrigger: { trigger: '.process-abstract-visual', start: 'top 70%' }
-});
+      gsap.from('.pa-dot', {
+        scale: 0, stagger: 0.2, duration: 0.5,
+        scrollTrigger: { trigger: '.process-abstract-visual', start: 'top 70%' }
+      });
 
-gsap.from('.section-cta-final h2', {
-  opacity: 0, y: 30, duration: 0.8,
-  scrollTrigger: { trigger: '.section-cta-final', start: 'top 70%' }
-});
+      gsap.from('.section-cta-final h2', {
+        opacity: 0, y: 30, duration: 0.8,
+        scrollTrigger: { trigger: '.section-cta-final', start: 'top 70%' }
+      });
 
-gsap.from('.app-ph-item', {
-  opacity: 0, y: 20, stagger: 0.05, duration: 0.4,
-  scrollTrigger: { trigger: '.apps-ph-grid', start: 'top 80%' }
-});
+      gsap.from('.app-ph-item', {
+        opacity: 0, y: 20, stagger: 0.05, duration: 0.4,
+        scrollTrigger: { trigger: '.apps-ph-grid', start: 'top 80%' }
+      });
 
-gsap.from('.tph-card', {
-  opacity: 0, y: 40, stagger: 0.12, duration: 0.6,
-  scrollTrigger: { trigger: '.testimonials-ph-grid', start: 'top 75%' }
-});
+      gsap.from('.tph-card', {
+        opacity: 0, y: 40, stagger: 0.12, duration: 0.6,
+        scrollTrigger: { trigger: '.testimonials-ph-grid', start: 'top 75%' }
+      });
 
-gsap.from('.specs-ph-table tbody tr', {
-  opacity: 0, x: -15, stagger: 0.06, duration: 0.4,
-  scrollTrigger: { trigger: '.specs-ph-table', start: 'top 80%' }
-});
+      gsap.from('.specs-ph-table tbody tr', {
+        opacity: 0, x: -15, stagger: 0.06, duration: 0.4,
+        scrollTrigger: { trigger: '.specs-ph-table', start: 'top 80%' }
+      });
 
-gsap.from('.cert-ph-item', {
-  opacity: 0, scale: 0.9, stagger: 0.1, duration: 0.4,
-  scrollTrigger: { trigger: '.section-cert-ph', start: 'top 85%' }
-});
+      gsap.from('.cert-ph-item', {
+        opacity: 0, scale: 0.9, stagger: 0.1, duration: 0.4,
+        scrollTrigger: { trigger: '.section-cert-ph', start: 'top 85%' }
+      });
 
-gsap.utils.toArray<HTMLElement>('.cta-circle').forEach((circle, i) => {
-  gsap.to(circle, {
-    rotation: i % 2 === 0 ? 360 : -360,
-    duration: 15 + i * 5,
-    repeat: -1,
-    ease: 'none'
-  });
-});
+      gsap.utils.toArray<HTMLElement>('.cta-circle').forEach((circle, i) => {
+        gsap.to(circle, {
+          rotation: i % 2 === 0 ? 360 : -360,
+          duration: 15 + i * 5,
+          repeat: -1,
+          ease: 'none'
+        });
+      });
+    });
     
     // Cleanup function
-    return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
-    };
+    return () => ctx.revert();
   }, []);
 
   return (
