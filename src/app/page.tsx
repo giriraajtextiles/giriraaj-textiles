@@ -60,7 +60,7 @@ gsap.from('.cert-ph-item', {
   scrollTrigger: { trigger: '.section-cert-ph', start: 'top 85%' }
 });
 
-gsap.utils.toArray('.cta-circle').forEach((circle, i) => {
+gsap.utils.toArray('.cta-circle').forEach((circle: any, i) => {
   gsap.to(circle, {
     rotation: i % 2 === 0 ? 360 : -360,
     duration: 15 + i * 5,
