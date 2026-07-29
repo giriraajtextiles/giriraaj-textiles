@@ -1,26 +1,51 @@
 import type { Metadata } from "next";
+import { Archivo, Public_Sans } from "next/font/google";
 import "./globals.css";
+
+const archivo = Archivo({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const publicSans = Public_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-body",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://giriraajtextiles.com"),
-  title: "Giriraaj Textiles — Building India's textile backbone",
+  title: "Giriraaj Textiles | 3-ply recycled polyester yarn & bag closing thread",
   description:
-    "Giriraaj Textiles supplies high-tenacity polyester and polypropylene yarn to packaging, agriculture, and industry across India. Every strand engineered with precision.",
-  keywords: ["polypropylene yarn", "polyester yarn", "industrial yarn", "geotextiles", "fibrillated yarn", "monofilament", "woven sacks", "FIBC bags", "India yarn manufacturer"],
+    "Manufacturer in Beawar, Rajasthan. Recycled polyester spun yarn in Ne 12/3 and 15/3, plus polypropylene bag closing thread. Call +91 80059 16878.",
+  keywords: [
+    "recycled polyester yarn",
+    "3 ply polyester yarn",
+    "12 count yarn",
+    "15 count yarn",
+    "bag closing thread",
+    "polypropylene thread",
+    "Beawar",
+    "Rajasthan",
+  ],
   authors: [{ name: "Giriraaj Textiles" }],
   creator: "Giriraaj Textiles",
   publisher: "Giriraaj Textiles",
   openGraph: {
-    title: "Giriraaj Textiles — Industrial Strength Yarn",
-    description: "Every strand engineered with precision. High-tenacity synthetic yarn manufacturing powering India's textile backbone.",
+    title: "Giriraaj Textiles",
+    description:
+      "3-ply recycled polyester yarn (Ne 12/3, 15/3) and polypropylene bag closing thread from Beawar.",
     url: "https://giriraajtextiles.com",
     siteName: "Giriraaj Textiles",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/3-12-white.jpg",
         width: 1200,
-        height: 630,
-        alt: "Giriraaj Textiles Industrial Yarn",
+        height: 1200,
+        alt: "Spools of recycled polyester yarn from Giriraaj Textiles",
       },
     ],
     locale: "en_IN",
@@ -28,9 +53,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Giriraaj Textiles — Industrial Strength Yarn",
-    description: "High-tenacity synthetic yarn manufacturing powering India's textile backbone.",
-    images: ["/og-image.jpg"],
+    title: "Giriraaj Textiles",
+    description:
+      "3-ply recycled polyester yarn and polypropylene bag closing thread from Beawar.",
+    images: ["/3-12-white.jpg"],
   },
   robots: {
     index: true,
@@ -38,9 +64,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
 };
@@ -51,15 +77,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-IN">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;400;600;700;800&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
-      </head>
-      <body>
-        {children}
-      </body>
+    <html lang="en-IN" className={`${archivo.variable} ${publicSans.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

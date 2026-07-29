@@ -1,56 +1,21 @@
-# Giriraaj Textiles Pvt. Ltd.
+# Giriraaj Textiles
 
 ## Overview
-Giriraaj Textiles is a modern, state-of-the-art synthetic yarn manufacturer based in Beawar, Rajasthan, India. Built on next-generation engineering principles, the company produces high-tenacity yarn that powers India's industrial supply chains—from geotextiles to packaging, ropes to composites. "Building India's textile backbone."
+Giriraaj Textiles is a yarn manufacturer in Beawar, Rajasthan (Ajmer region), established in 2025. Proprietorship led by S Agarwal. Up to 10 employees. GST registered in 2025.
 
-## Core Philosophy
-Every strand of our yarn is engineered with precision. Quality is engineered in, not inspected in. Operating with the latest, highly efficient machinery, our process ensures zero breakage and flawless runs on high-speed looms.
+## Products
+- Recycled polyester spun yarn: 3-ply, English cotton count Ne 12/3 (coarser) and Ne 15/3 (finer). Colours include white, cream, snow white, blue, red, yellow, black.
+- Polypropylene plastic bag closing thread for industrial sack closing.
 
-## Capabilities & Industrial Pillars
-We specialize in four key product categories:
+## Typical use
+Closing and stitching woven PP, jute, paper, and mesh bags for grain, feed, seed, fertiliser, cement, and other bulk packing.
 
-### 1. Polypropylene Yarn (PP)
-- **Description**: High-tenacity yarn engineered for extreme load-bearing applications.
-- **Denier Range**: 300D - 3000D
-- **Tenacity**: 5.5 - 7.0 g/d
-- **Elongation**: 18 - 24%
-- **Applications**: Woven sacks, geotextiles, industrial fabrics, heavy lifting, FIBC bags.
+## Contact
+- Phone: +91 80059 16878
+- Address: 6B, Chandra Vihar Colony, Beawar, Rajasthan
+- Website: https://giriraajtextiles.com
+- IndiaMART: https://www.indiamart.com/giriraaj-textiles/
 
-### 2. Polyester Yarn (PET)
-- **Description**: Fully drawn polyester yarn with superior tensile strength and batch-to-batch consistency.
-- **Denier Range**: 75D - 600D
-- **Tenacity**: 6.0 - 8.5 g/d
-- **Elongation**: 12 - 18%
-- **Applications**: Technical textiles, heavy-duty sewing thread, automotive upholstery, seat belts.
-
-### 3. Mono Filament
-- **Description**: Precision-extruded monofilament for specialized mesh and screening.
-- **Denier Range**: Custom Specifications
-- **Tenacity**: 4.5 - 6.0 g/d
-- **Elongation**: 15 - 25%
-- **Applications**: Filtration systems, chemical processing, water treatment, construction safety nets.
-
-### 4. Fibrillated & Tape Yarn
-- **Description**: Network-structured yarn (Fibrillated) and flat profile yarn (Tape) offering maximum coverage.
-- **Denier Range**: 200D - 3000D
-- **Applications**: Ropes, nets, composite reinforcement, weaving, and packaging. UV Stabilized and custom blends available (e.g., anti-microbial, flame-retardant).
-
-## Application Industries
-Our yarn works in:
-- **Woven Sacks**: Grain, fertilizer, cement, and chemical packaging.
-- **Geotextiles**: Road stabilization and erosion control.
-- **Ropes & Nets**: Marine, fishing, and safety applications.
-- **FIBC Bags**: Bulk packaging for industrial materials.
-- **Sewing Thread**: Heavy-duty stitching for leather and auto.
-- **Filtration**: Chemical processing and water treatment.
-- **Automotive**: Seat belts, upholstery, and composites.
-- **Construction**: Safety nets and reinforcement mesh.
-
-## Certifications & Quality Assurance
-- **ISO 9001**: Quality Management Systems
-- **Zero-Breakage Guarantee**: For high-speed looms.
-
-## Contact Information
-- **Company**: Giriraaj Textiles Pvt. Ltd.
-- **Location**: Beawar, Rajasthan, India
-- **Website**: https://giriraajtextiles.com
+## HSN
+- 5509: Yarn of synthetic staple fibres (other than sewing thread), not put up for retail sale
+- 3923: Plastic articles for the conveyance or packing of goods

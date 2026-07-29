@@ -15,13 +15,12 @@ export type ContactFormData = {
 };
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const phoneDigits = (value: string) => value.replace(/\D/g, "");
 
 export async function submitContact(
   prevState: FormState,
   formData: FormData,
 ): Promise<FormState> {
-  // TODO: Add rate limiting (e.g., IP-based, max 5 submissions per minute)
-
   const raw: ContactFormData = {
     name: (formData.get("name") as string)?.trim(),
     company: (formData.get("company") as string)?.trim(),
@@ -33,15 +32,19 @@ export async function submitContact(
   const errors: Record<string, string[]> = {};
 
   if (!raw.name || raw.name.length < 2) {
-    errors.name = ["Name is required (min 2 characters)"];
+    errors.name = ["Name is required"];
   }
 
-  if (!raw.email || !emailRegex.test(raw.email)) {
-    errors.email = ["A valid email address is required"];
+  if (phoneDigits(raw.phone).length < 10) {
+    errors.phone = ["Enter a valid 10-digit phone number"];
+  }
+
+  if (raw.email && !emailRegex.test(raw.email)) {
+    errors.email = ["Enter a valid email, or leave this blank"];
   }
 
   if (!raw.message || raw.message.length < 10) {
-    errors.message = ["Message is required (min 10 characters)"];
+    errors.message = ["Tell us what you need (at least a short note)"];
   }
 
   if (Object.keys(errors).length > 0) {
@@ -52,6 +55,6 @@ export async function submitContact(
 
   return {
     success: true,
-    message: "Thank you! We'll get back to you shortly.",
+    message: "Received. We will call you back from Beawar shortly.",
   };
 }
