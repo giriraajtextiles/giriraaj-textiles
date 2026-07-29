@@ -1,5 +1,9 @@
 import Image from "next/image";
-import { ContactForm } from "@/components/contact-form";
+import {
+  polyesterCounts,
+  polyesterVariants,
+  polypropylenePhotos,
+} from "@/lib/products";
 
 const PHONE = "8005916878";
 const PHONE_DISPLAY = "+91 80059 16878";
@@ -7,71 +11,23 @@ const TEL_HREF = `tel:+91${PHONE}`;
 const ADDRESS = "6B, Chandra Vihar Colony, Beawar, Rajasthan";
 const MAPS_HREF = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADDRESS)}`;
 
-const polyesterProducts = [
-  {
-    src: "/3-12-white.jpg",
-    alt: "Ne 12/3 recycled white polyester yarn spools",
-    name: "Ne 12/3 White",
-    note: "3-ply recycled polyester · coarser count",
-  },
-  {
-    src: "/3-12-blue.jpg",
-    alt: "Ne 12/3 recycled blue polyester yarn spools",
-    name: "Ne 12/3 Blue",
-    note: "3-ply recycled polyester · coarser count",
-  },
-  {
-    src: "/3-15-cream-1.jpeg",
-    alt: "Ne 15/3 recycled cream polyester yarn spool",
-    name: "Ne 15/3 Cream",
-    note: "3-ply recycled polyester · finer count",
-  },
-  {
-    src: "/3-15-blue.jpg",
-    alt: "Ne 15/3 recycled blue polyester yarn spools",
-    name: "Ne 15/3 Blue",
-    note: "3-ply recycled polyester · finer count",
-  },
-];
+function waHref(message: string) {
+  return `https://wa.me/91${PHONE}?text=${encodeURIComponent(message)}`;
+}
 
-const bagClosingProducts = [
-  {
-    src: "/pp-1.jpeg",
-    alt: "Cone of polypropylene bag closing thread",
-    name: "PP bag closing thread",
-    note: "Polypropylene · industrial sack closing",
-  },
-  {
-    src: "/pp-2.jpeg",
-    alt: "Polypropylene bag closing thread cone, angled view",
-    name: "PP bag closing thread",
-    note: "Polypropylene · industrial sack closing",
-  },
-  {
-    src: "/pp-3.jpeg",
-    alt: "Polypropylene bag closing thread cone on white surface",
-    name: "PP bag closing thread",
-    note: "Polypropylene · industrial sack closing",
-  },
-];
+const WA_GENERAL = waHref(
+  "Hello, I want to enquire about yarn from Giriraaj Textiles.\nProduct:\nCount:\nColour:\nMonthly volume:",
+);
+const WA_POLYESTER = waHref(
+  "Hello, I want to enquire about recycled polyester yarn (3-ply, counts 10/12/15).\nCount:\nColour:\nMonthly volume:",
+);
+const WA_PP = waHref(
+  "Hello, I want to enquire about polypropylene (PP) thread.\nDetails:",
+);
 
 export default function Home() {
   return (
     <main>
-      <div className="contact-bar">
-        <a href={TEL_HREF} className="contact-bar-phone">
-          Call {PHONE_DISPLAY}
-        </a>
-        <a
-          href={MAPS_HREF}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="contact-bar-address"
-        >
-          {ADDRESS}
-        </a>
-      </div>
-
       <nav>
         <a href="#top" className="logo">
           Giriraaj Textiles
@@ -82,9 +38,6 @@ export default function Home() {
           </li>
           <li>
             <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#stock">Stock</a>
           </li>
           <li>
             <a href="#contact">Enquire</a>
@@ -109,151 +62,133 @@ export default function Home() {
         <div className="hero-shade" aria-hidden="true" />
         <div className="hero-content">
           <p className="brand">Giriraaj Textiles</p>
-          <h1>3-ply recycled polyester yarn for bag closing</h1>
+          <h1>Synthetic yarn for industrial bag closing</h1>
           <p className="sub">
-            We manufacture Ne 12/3 and Ne 15/3 recycled polyester spun yarn, plus
-            polypropylene thread for closing woven sacks and industrial bags. From
+            Recycled polyester yarn and polypropylene thread, manufactured in
             Beawar, Rajasthan.
           </p>
           <div className="hero-actions">
-            <a href={TEL_HREF} className="btn-primary">
-              Call {PHONE_DISPLAY}
+            <a href="#products" className="btn-primary">
+              Browse products
             </a>
-            <a href="#products" className="btn-ghost">
-              See products
+            <a
+              href={WA_GENERAL}
+              className="btn-ghost"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Enquire on WhatsApp
             </a>
           </div>
-          <p className="hero-address">
-            <a href={MAPS_HREF} target="_blank" rel="noopener noreferrer">
-              {ADDRESS}
-            </a>
-          </p>
         </div>
       </section>
 
-      <section className="section products" id="products">
-        <header className="section-head">
-          <h2>Recycled polyester spun yarn</h2>
+      <section className="section catalogue" id="products">
+        <header className="catalogue-intro">
+          <h2>Products</h2>
           <p>
-            Ring-spun recycled polyester, twisted 3-ply. Sold in English cotton
-            count (Ne): <strong>12/3</strong> is the coarser, stronger option for
-            heavier sacks; <strong>15/3</strong> is finer for lighter bags and a
-            cleaner stitch. Colours include white, cream, snow white, blue, red,
-            yellow, and black.
+            Two lines. Pick a product, check the variants, then enquire on
+            WhatsApp. We reply within 12 hours.
           </p>
         </header>
-        <div className="product-grid">
-          {polyesterProducts.map((product) => (
-            <figure key={product.src} className="product">
-              <div className="product-media">
-                <Image
-                  src={product.src}
-                  alt={product.alt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                />
-              </div>
-              <figcaption>
-                <strong>{product.name}</strong>
-                <span>{product.note}</span>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
 
-        <header className="section-head section-head-follow">
-          <h2>Polypropylene bag closing thread</h2>
-          <p>
-            Plastic PP thread for sealing open-mouth woven polypropylene sacks
-            and similar industrial bags on portable or stationary bag closers.
-          </p>
-        </header>
-        <div className="product-grid product-grid-three">
-          {bagClosingProducts.map((product) => (
-            <figure key={product.src} className="product">
-              <div className="product-media">
-                <Image
-                  src={product.src}
-                  alt={product.alt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
+        <article className="product-line" id="polyester">
+          <div className="product-line-copy">
+            <h3>Recycled polyester yarn</h3>
+            <p>
+              3-ply synthetic yarn for closing HDP and woven bags on industrial
+              bag-closing machines.
+            </p>
+            <dl className="spec-list">
+              <div>
+                <dt>Ply</dt>
+                <dd>3-ply</dd>
               </div>
-              <figcaption>
-                <strong>{product.name}</strong>
-                <span>{product.note}</span>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
+              <div>
+                <dt>Count</dt>
+                <dd>{polyesterCounts.join(", ")}</dd>
+              </div>
+              <div>
+                <dt>MOQ</dt>
+                <dd>1,000 cones</dd>
+              </div>
+            </dl>
+            <a
+              href={WA_POLYESTER}
+              className="line-cta"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Enquire on WhatsApp
+            </a>
+          </div>
+          <div className="variant-gallery" aria-label="Polyester yarn colours">
+            {polyesterVariants.map((variant) => (
+              <figure key={variant.src} className="variant">
+                <div className="variant-media">
+                  <Image
+                    src={variant.src}
+                    alt={variant.alt}
+                    fill
+                    sizes="(max-width: 768px) 50vw, 22vw"
+                  />
+                </div>
+                <figcaption>
+                  <strong>{variant.label}</strong>
+                  <span>{variant.count} count</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </article>
 
-        <div className="uses">
-          <h3>Where these yarns are used</h3>
-          <p>
-            Closing and stitching woven PP, jute, paper, and mesh bags for grain,
-            feed, seed, fertiliser, cement, chemicals, and other bulk packing. Suited
-            to industrial bag-closing machines and high-volume packing lines.
-          </p>
-        </div>
+        <article className="product-line product-line-pp" id="pp">
+          <div className="product-line-copy">
+            <h3>Polypropylene thread</h3>
+            <p>
+              PP thread for sealing open-mouth woven sacks and industrial bags.
+              More specifications are available on call.
+            </p>
+            <a
+              href={WA_PP}
+              className="line-cta"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Enquire on WhatsApp
+            </a>
+          </div>
+          <div className="variant-gallery" aria-label="Polypropylene thread">
+            {polypropylenePhotos.map((photo) => (
+              <figure key={photo.src} className="variant">
+                <div className="variant-media">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    sizes="(max-width: 768px) 50vw, 22vw"
+                  />
+                </div>
+              </figure>
+            ))}
+          </div>
+        </article>
       </section>
 
       <section className="section about" id="about">
         <div className="about-copy">
-          <h2>Manufacturer in Beawar</h2>
+          <h2>From Beawar</h2>
           <p>
-            Giriraaj Textiles started in 2025 in the Ajmer region of Rajasthan. We
-            make recycled polyester spun yarn, polypropylene bag closing thread,
-            and related industrial yarns for packaging plants and machinery users.
-          </p>
-          <p>
-            Proprietorship under S Agarwal. A small team of up to 10 people,
-            GST-registered in 2025. Stock ships from Beawar.
+            Giriraaj Textiles started in 2025 in the Ajmer region of Rajasthan.
+            Proprietorship under S Agarwal. A small team, GST-registered, stock
+            ships from Beawar.
           </p>
         </div>
-        <dl className="factsheet">
-          <div>
-            <dt>Nature of business</dt>
-            <dd>Manufacturer</dd>
-          </div>
-          <div>
-            <dt>Legal status</dt>
-            <dd>Proprietorship</dd>
-          </div>
-          <div>
-            <dt>Phone</dt>
-            <dd>
-              <a href={TEL_HREF}>{PHONE_DISPLAY}</a>
-            </dd>
-          </div>
-          <div>
-            <dt>Address</dt>
-            <dd>
-              <a href={MAPS_HREF} target="_blank" rel="noopener noreferrer">
-                6B, Chandra Vihar Colony, Beawar
-              </a>
-            </dd>
-          </div>
-          <div>
-            <dt>Established</dt>
-            <dd>2025</dd>
-          </div>
-          <div>
-            <dt>HSN</dt>
-            <dd>5509, 3923</dd>
-          </div>
-        </dl>
-      </section>
-
-      <section className="section stock" id="stock">
-        <header className="section-head">
-          <h2>Ready stock in Beawar</h2>
-          <p>Packed yarn in the warehouse, available for dispatch.</p>
-        </header>
-        <div className="stock-grid">
+        <div className="stock-grid" aria-label="Warehouse stock">
           <figure className="stock-shot">
             <Image
               src="/exterior1.webp"
-              alt="Warehouse aisle with stacked white and yellow packed yarn stock"
+              alt="Warehouse aisle with stacked packed yarn stock"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
             />
@@ -261,7 +196,7 @@ export default function Home() {
           <figure className="stock-shot">
             <Image
               src="/exterior2.webp"
-              alt="Stacked inventory packages in the Giriraaj Textiles warehouse"
+              alt="Stacked inventory packages in the warehouse"
               fill
               sizes="(max-width: 768px) 100vw, 25vw"
             />
@@ -279,42 +214,30 @@ export default function Home() {
 
       <section className="section contact" id="contact">
         <div className="contact-intro">
-          <h2>Send an enquiry</h2>
+          <h2>Enquire on WhatsApp</h2>
           <p>
-            Prefer to talk first? Call us. Or send count, colour, and monthly
-            volume below and we will reply from Beawar.
+            Send count, colour, and monthly volume. We reply within 12 hours.
           </p>
-          <ul className="contact-details">
-            <li>
-              <span>Phone</span>
-              <a href={TEL_HREF}>{PHONE_DISPLAY}</a>
-            </li>
-            <li>
-              <span>Address</span>
-              <a href={MAPS_HREF} target="_blank" rel="noopener noreferrer">
-                {ADDRESS}
-              </a>
-            </li>
-            <li>
-              <span>Catalogue</span>
-              <a
-                href="https://www.indiamart.com/giriraaj-textiles/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                IndiaMART listing
-              </a>
-            </li>
-          </ul>
+          <div className="contact-actions">
+            <a
+              href={WA_GENERAL}
+              className="btn-whatsapp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open WhatsApp
+            </a>
+            <a href={TEL_HREF} className="contact-phone">
+              Or call {PHONE_DISPLAY}
+            </a>
+          </div>
         </div>
-        <ContactForm />
       </section>
 
       <footer>
         <span>Giriraaj Textiles</span>
-        <a href={TEL_HREF}>{PHONE_DISPLAY}</a>
         <a href={MAPS_HREF} target="_blank" rel="noopener noreferrer">
-          6B, Chandra Vihar Colony, Beawar
+          {ADDRESS}
         </a>
       </footer>
     </main>

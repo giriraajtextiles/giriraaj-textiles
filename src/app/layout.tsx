@@ -18,16 +18,19 @@ const publicSans = Public_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://giriraajtextiles.com"),
-  title: "Giriraaj Textiles | 3-ply recycled polyester yarn & bag closing thread",
+  title: "Giriraaj Textiles | Recycled polyester yarn & PP thread",
   description:
-    "Manufacturer in Beawar, Rajasthan. Recycled polyester spun yarn in Ne 12/3 and 15/3, plus polypropylene bag closing thread. Call +91 80059 16878.",
+    "Manufacturer in Beawar, Rajasthan. 3-ply recycled polyester yarn (counts 10–15) and polypropylene bag closing thread. Enquiry reply within 12 hours. Call +91 80059 16878.",
   keywords: [
     "recycled polyester yarn",
     "3 ply polyester yarn",
+    "10 count yarn",
     "12 count yarn",
     "15 count yarn",
     "bag closing thread",
     "polypropylene thread",
+    "PP thread",
+    "HDP bags",
     "Beawar",
     "Rajasthan",
   ],
@@ -37,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Giriraaj Textiles",
     description:
-      "3-ply recycled polyester yarn (Ne 12/3, 15/3) and polypropylene bag closing thread from Beawar.",
+      "3-ply recycled polyester yarn (counts 10–15) and polypropylene bag closing thread from Beawar.",
     url: "https://giriraajtextiles.com",
     siteName: "Giriraaj Textiles",
     images: [
