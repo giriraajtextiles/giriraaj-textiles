@@ -1,20 +1,26 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Archivo, Public_Sans } from "next/font/google";
 import "./globals.css";
 
 const archivo = Archivo({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
-  variable: "--font-display",
+  variable: "--font-archivo",
   display: "swap",
 });
 
 const publicSans = Public_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
-  variable: "--font-body",
+  variable: "--font-public-sans",
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://giriraajtextiles.com"),
@@ -80,8 +86,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-IN" className={`${archivo.variable} ${publicSans.variable}`}>
-      <body>{children}</body>
+    <html
+      lang="en-IN"
+      className={`${archivo.variable} ${publicSans.variable} scroll-smooth`}
+    >
+      <body className="overflow-x-hidden bg-paper font-sans text-ink antialiased leading-relaxed">
+        {children}
+      </body>
     </html>
   );
 }
