@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo, Public_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -81,7 +82,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-IN" className={`${archivo.variable} ${publicSans.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
