@@ -1,18 +1,18 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Public_Sans } from "next/font/google";
+import { Oswald, Roboto } from "next/font/google";
 import "./globals.css";
 
-const archivo = Archivo({
+const oswald = Oswald({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
-  variable: "--font-archivo",
+  variable: "--font-oswald",
   display: "swap",
 });
 
-const publicSans = Public_Sans({
+const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-public-sans",
+  weight: ["400", "500"],
+  variable: "--font-roboto",
   display: "swap",
 });
 
@@ -24,19 +24,22 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://giriraajtextiles.com"),
-  title: "Giriraaj Textiles | Recycled polyester yarn & PP thread",
+  title: {
+    default: "Bag closing yarn | Giriraaj Textiles",
+    template: "%s | Giriraaj Textiles",
+  },
   description:
-    "Manufacturer in Beawar, Rajasthan. 3-ply recycled polyester yarn (counts 10–15) and polypropylene bag closing thread. Enquiry reply within 12 hours. Call +91 80059 16878.",
+    "3-ply polyester and polypropylene yarn for industrial bag closing. Counts 10, 12, and 15. Recycled and virgin. For distributors, export agents, and domestic buyers. Beawar, Rajasthan.",
   keywords: [
-    "recycled polyester yarn",
+    "bag closing yarn",
+    "polyester yarn",
+    "polypropylene yarn",
     "3 ply polyester yarn",
     "10 count yarn",
     "12 count yarn",
     "15 count yarn",
-    "bag closing thread",
-    "polypropylene thread",
-    "PP thread",
-    "HDP bags",
+    "HDPE bags",
+    "yarn supplier India",
     "Beawar",
     "Rajasthan",
   ],
@@ -46,15 +49,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Giriraaj Textiles",
     description:
-      "3-ply recycled polyester yarn (counts 10–15) and polypropylene bag closing thread from Beawar.",
+      "3-ply polyester and polypropylene yarn for industrial bag closing. For distributors, export agents, and domestic buyers. Beawar, Rajasthan.",
     url: "https://giriraajtextiles.com",
     siteName: "Giriraaj Textiles",
     images: [
       {
-        url: "/3-12-white.jpg",
+        url: "/3-15-blue.jpg",
         width: 1200,
         height: 1200,
-        alt: "Spools of recycled polyester yarn from Giriraaj Textiles",
+        alt: "Polyester yarn from Giriraaj Textiles",
       },
     ],
     locale: "en_IN",
@@ -64,8 +67,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Giriraaj Textiles",
     description:
-      "3-ply recycled polyester yarn and polypropylene bag closing thread from Beawar.",
-    images: ["/3-12-white.jpg"],
+      "3-ply polyester and polypropylene yarn for industrial bag closing. Beawar, Rajasthan.",
+    images: ["/3-15-blue.jpg"],
   },
   robots: {
     index: true,
@@ -88,9 +91,9 @@ export default function RootLayout({
   return (
     <html
       lang="en-IN"
-      className={`${archivo.variable} ${publicSans.variable} scroll-smooth`}
+      className={`${oswald.variable} ${roboto.variable} scroll-smooth`}
     >
-      <body className="overflow-x-hidden bg-paper font-sans text-ink antialiased leading-relaxed">
+      <body className="overflow-x-hidden bg-neutral-950 font-[family-name:var(--font-roboto)] text-white antialiased">
         {children}
       </body>
     </html>

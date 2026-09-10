@@ -24,6 +24,14 @@
 .DS_Store
 *.pem
 
+# tooling & IDE
+.agents/
+.gemini/
+.cursor/
+.idea/
+*.swp
+*~
+
 # debug
 npm-debug.log*
 yarn-debug.log*

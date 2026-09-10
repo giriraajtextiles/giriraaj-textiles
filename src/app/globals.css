@@ -1,16 +1,6 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
 @theme inline {
-  --color-ink: oklch(0.22 0.01 50);
-  --color-paper: oklch(0.985 0.002 90);
-  --color-muted: oklch(0.42 0.02 50);
-  --color-line: oklch(0.22 0.01 50 / 0.12);
-  --color-oxide: oklch(0.55 0.14 40);
-  --color-oxide-ink: oklch(0.42 0.12 40);
-  --color-surface: oklch(0.965 0.006 70);
-  --color-media: oklch(0.94 0.008 90);
-  --font-display: var(--font-archivo), system-ui, sans-serif;
-  --font-sans: var(--font-public-sans), system-ui, sans-serif;
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --font-display: var(--font-oswald), system-ui, sans-serif;
+  --font-sans: var(--font-roboto), system-ui, sans-serif;
 }
