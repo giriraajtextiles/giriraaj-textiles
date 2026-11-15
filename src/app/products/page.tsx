@@ -41,10 +41,10 @@ export default function ProductsPage() {
                 <p className="mt-4 text-sm leading-relaxed text-white/60">
                   {line.summary}
                 </p>
-                <ul className="mt-6 space-y-1.5 text-sm text-white/50">
+                <ul className="mt-6 space-y-1.5 text-sm text-white/60">
                   {line.specs.slice(0, 3).map((s) => (
                     <li key={s.label}>
-                      <span className="text-white/35">{s.label}</span>{" "}
+                      <span className="text-white/60">{s.label}</span>{" "}
                       <span className="text-white/75">{s.value}</span>
                     </li>
                   ))}

@@ -36,7 +36,7 @@ export default function ContactPage() {
             {PHONE_DISPLAY}
           </a>
         </p>
-        <p className="mt-4 text-sm text-white/45">{ADDRESS}</p>
+        <p className="mt-4 text-sm text-white/60">{ADDRESS}</p>
       </section>
     </SiteChrome>
   );

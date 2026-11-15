@@ -56,7 +56,7 @@ export default function PolypropylenePage() {
         </div>
 
         <aside>
-          <p className={`${display} text-xs tracking-[0.15em] text-white/40`}>
+          <p className={`${display} text-xs tracking-[0.15em] text-white/60`}>
             REFERENCE
           </p>
           <figure className="m-0 mt-4">

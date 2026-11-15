@@ -57,7 +57,7 @@ export default function PolyesterPage() {
         </div>
 
         <aside>
-          <p className={`${display} text-xs tracking-[0.15em] text-white/40`}>
+          <p className={`${display} text-xs tracking-[0.15em] text-white/60`}>
             SAMPLE COLOURS
           </p>
           <div className="mt-4 space-y-3">
@@ -72,14 +72,14 @@ export default function PolyesterPage() {
                     sizes="256px"
                   />
                 </div>
-                <figcaption className="mt-1.5 flex justify-between text-xs text-white/50">
+                <figcaption className="mt-1.5 flex justify-between text-xs text-white/60">
                   <span>{p.label}</span>
                   <span>{p.count} count</span>
                 </figcaption>
               </figure>
             ))}
           </div>
-          <p className="mt-4 text-xs text-white/35">
+          <p className="mt-4 text-xs text-white/60">
             Photos are reference samples, not a full catalogue.
           </p>
         </aside>
