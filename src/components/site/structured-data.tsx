@@ -1,5 +1,5 @@
 import { yarnLines } from "@/lib/products";
-import { ADDRESS, PHONE } from "@/lib/site";
+import { ADDRESS, GSTIN, PHONE } from "@/lib/site";
 
 const SITE_URL = "https://www.giriraajtextiles.com";
 const BUSINESS_ID = `${SITE_URL}/#business`;
@@ -18,6 +18,7 @@ const structuredData = {
       name: "Giriraaj Textiles",
       url: SITE_URL,
       telephone: `+91${PHONE}`,
+      taxID: GSTIN,
       address: {
         "@type": "PostalAddress",
         streetAddress,
@@ -33,11 +34,8 @@ const structuredData = {
       description: line.summary,
       image: `${SITE_URL}${line.coverImage}`,
       url: `${SITE_URL}/products/${line.id}`,
-      manufacturer: { "@id": BUSINESS_ID },
-      // "Material" is held back until the recycled/virgin claim is confirmed.
-      additionalProperty: line.specs
-        .filter((spec) => spec.label !== "Material")
-        .map((spec) => ({
+      brand: { "@id": BUSINESS_ID },
+      additionalProperty: line.specs.map((spec) => ({
         "@type": "PropertyValue",
         name: spec.label,
         value: spec.value,
