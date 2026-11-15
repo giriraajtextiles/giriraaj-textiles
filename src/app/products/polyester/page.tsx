@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: "Polyester yarn",
   description:
     "3-ply polyester yarn for bag closing. Counts 10, 12, and 15. Recycled and virgin. MOQ 1,000 cones. Giriraaj Textiles, Beawar.",
+  alternates: { canonical: "/products/polyester" },
 };
 
 export default function PolyesterPage() {

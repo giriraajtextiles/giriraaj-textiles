@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Enquire",
   description:
     "Contact Giriraaj Textiles on WhatsApp or phone. Bag closing yarn enquiries. Replies within 12 hours.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

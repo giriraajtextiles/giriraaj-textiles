@@ -1,8 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteChrome, display, shell, themeClasses } from "@/components/site/chrome";
 import { Hero } from "@/components/site/hero";
 import { ProductCoverImage } from "@/components/site/product-image";
 import { yarnLines } from "@/lib/products";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   const t = themeClasses("dark");

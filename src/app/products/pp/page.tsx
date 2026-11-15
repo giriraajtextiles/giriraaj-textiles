@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: "Polypropylene yarn",
   description:
     "Polypropylene yarn for woven sack bag closing. Specifications on enquiry. Giriraaj Textiles, Beawar, Rajasthan.",
+  alternates: { canonical: "/products/pp" },
 };
 
 export default function PolypropylenePage() {

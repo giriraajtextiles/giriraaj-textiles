@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Giriraaj Textiles manufactures bag closing yarn in Beawar, Rajasthan. GST-registered since 2025.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

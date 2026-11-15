@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Products",
   description:
     "Polyester yarn and polypropylene yarn for industrial bag closing. 3-ply counts 10, 12, and 15. Beawar, Rajasthan.",
+  alternates: { canonical: "/products" },
 };
 
 export default function ProductsPage() {

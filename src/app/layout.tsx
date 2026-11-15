@@ -24,7 +24,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://giriraajtextiles.com"),
+  metadataBase: new URL("https://www.giriraajtextiles.com"),
   title: {
     default: "Bag closing yarn | Giriraaj Textiles",
     template: "%s | Giriraaj Textiles",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "Giriraaj Textiles",
     description:
       "3-ply polyester and polypropylene yarn for industrial bag closing. For distributors, export agents, and domestic buyers. Beawar, Rajasthan.",
-    url: "https://giriraajtextiles.com",
+    url: "/",
     siteName: "Giriraaj Textiles",
     images: [
       {
