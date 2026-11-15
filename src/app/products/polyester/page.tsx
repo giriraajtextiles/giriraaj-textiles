@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import {
   PageHeader,
   SiteChrome,
@@ -7,8 +6,10 @@ import {
   display,
   shell,
 } from "@/components/site/chrome";
+import { ProductReferenceImage } from "@/components/site/product-image";
 import { polyesterPhotos, yarnLines } from "@/lib/products";
 import { WA_POLYESTER } from "@/lib/site";
+import { pageMeta } from "@/lib/seo";
 
 const line = yarnLines.find((l) => l.id === "polyester")!;
 
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
   title: "Polyester yarn",
   description:
     "3-ply polyester yarn for bag closing. Counts 10, 12, and 15. Recycled and virgin. MOQ 1,000 cones. Giriraaj Textiles, Beawar.",
+  ...pageMeta("/products/polyester"),
 };
 
 export default function PolyesterPage() {
@@ -56,29 +58,25 @@ export default function PolyesterPage() {
         </div>
 
         <aside>
-          <p className={`${display} text-xs tracking-[0.15em] text-white/40`}>
+          <p className={`${display} text-xs tracking-[0.15em] text-white/60`}>
             SAMPLE COLOURS
           </p>
           <div className="mt-4 space-y-3">
             {polyesterPhotos.map((p) => (
               <figure key={p.src} className="m-0">
-                <div className="relative aspect-[4/3] overflow-hidden bg-neutral-900">
-                  <Image
-                    src={p.src}
-                    alt={p.alt}
-                    fill
-                    className="object-cover opacity-80"
-                    sizes="256px"
-                  />
-                </div>
-                <figcaption className="mt-1.5 flex justify-between text-xs text-white/50">
+                <ProductReferenceImage
+                  src={p.src}
+                  alt={p.alt}
+                  lineId="polyester"
+                />
+                <figcaption className="mt-1.5 flex justify-between text-xs text-white/60">
                   <span>{p.label}</span>
                   <span>{p.count} count</span>
                 </figcaption>
               </figure>
             ))}
           </div>
-          <p className="mt-4 text-xs text-white/35">
+          <p className="mt-4 text-xs text-white/60">
             Photos are reference samples, not a full catalogue.
           </p>
         </aside>

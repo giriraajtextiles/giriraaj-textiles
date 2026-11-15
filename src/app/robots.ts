@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://giriraajtextiles.com/sitemap.xml',
+    sitemap: 'https://www.giriraajtextiles.com/sitemap.xml',
   };
 }

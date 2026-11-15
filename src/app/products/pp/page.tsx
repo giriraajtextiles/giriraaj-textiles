@@ -9,6 +9,7 @@ import {
 import { ProductReferenceImage } from "@/components/site/product-image";
 import { polypropylenePhotos, yarnLines } from "@/lib/products";
 import { WA_PP } from "@/lib/site";
+import { pageMeta } from "@/lib/seo";
 
 const line = yarnLines.find((l) => l.id === "pp")!;
 
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
   title: "Polypropylene yarn",
   description:
     "Polypropylene yarn for woven sack bag closing. Specifications on enquiry. Giriraaj Textiles, Beawar, Rajasthan.",
+  ...pageMeta("/products/pp"),
 };
 
 export default function PolypropylenePage() {
@@ -55,15 +57,18 @@ export default function PolypropylenePage() {
         </div>
 
         <aside>
-          <p className={`${display} text-xs tracking-[0.15em] text-white/40`}>
+          <p className={`${display} text-xs tracking-[0.15em] text-white/60`}>
             REFERENCE
           </p>
-          <figure className="m-0 mt-4">
-            <ProductReferenceImage
-              src={polypropylenePhotos[0].src}
-              alt={polypropylenePhotos[0].alt}
-              lineId="pp"
-            />
+          <figure className="m-0 mt-4 space-y-3">
+            {polypropylenePhotos.map((p) => (
+              <ProductReferenceImage
+                key={p.src}
+                src={p.src}
+                alt={p.alt}
+                lineId="pp"
+              />
+            ))}
           </figure>
         </aside>
       </section>

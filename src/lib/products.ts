@@ -22,6 +22,18 @@ export const polyesterPhotos = [
     label: "Cream",
     count: "15",
   },
+  {
+    src: "/3-15-cream-1.jpeg",
+    alt: "Cream polyester yarn cone, 15 count",
+    label: "Cream",
+    count: "15",
+  },
+  {
+    src: "/3-15-cream-2.jpeg",
+    alt: "Cream polyester yarn cones, 15 count",
+    label: "Cream",
+    count: "15",
+  },
 ] as const;
 
 /** @deprecated Use polyesterPhotos */
@@ -35,6 +47,10 @@ export const polypropylenePhotos = [
   {
     src: "/pp-2.jpeg",
     alt: "Polypropylene bag closing yarn cone, angled view",
+  },
+  {
+    src: "/pp-1.jpeg",
+    alt: "Polypropylene bag closing yarn cone",
   },
 ] as const;
 
@@ -61,6 +77,7 @@ export const yarnLines: YarnLine[] = [
       { label: "Material", value: "Recycled and virgin" },
       { label: "Colours", value: `${polyesterColours.join(", ")}, on request` },
       { label: "MOQ", value: "1,000 cones" },
+      { label: "HSN", value: "5509" },
     ],
   },
   {

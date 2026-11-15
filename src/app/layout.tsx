@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Oswald, Roboto } from "next/font/google";
+import { StructuredData } from "@/components/site/structured-data";
+import { baseOpenGraph } from "@/lib/seo";
 import "./globals.css";
 
 const oswald = Oswald({
@@ -23,7 +25,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://giriraajtextiles.com"),
+  metadataBase: new URL("https://www.giriraajtextiles.com"),
   title: {
     default: "Bag closing yarn | Giriraaj Textiles",
     template: "%s | Giriraaj Textiles",
@@ -46,29 +48,12 @@ export const metadata: Metadata = {
   authors: [{ name: "Giriraaj Textiles" }],
   creator: "Giriraaj Textiles",
   publisher: "Giriraaj Textiles",
-  openGraph: {
-    title: "Giriraaj Textiles",
-    description:
-      "3-ply polyester and polypropylene yarn for industrial bag closing. For distributors, export agents, and domestic buyers. Beawar, Rajasthan.",
-    url: "https://giriraajtextiles.com",
-    siteName: "Giriraaj Textiles",
-    images: [
-      {
-        url: "/3-15-blue.jpg",
-        width: 1200,
-        height: 1200,
-        alt: "Polyester yarn from Giriraaj Textiles",
-      },
-    ],
-    locale: "en_IN",
-    type: "website",
-  },
+  openGraph: { ...baseOpenGraph, url: "/" },
   twitter: {
     card: "summary_large_image",
     title: "Giriraaj Textiles",
     description:
       "3-ply polyester and polypropylene yarn for industrial bag closing. Beawar, Rajasthan.",
-    images: ["/3-15-blue.jpg"],
   },
   robots: {
     index: true,
@@ -94,6 +79,7 @@ export default function RootLayout({
       className={`${oswald.variable} ${roboto.variable} scroll-smooth`}
     >
       <body className="overflow-x-hidden bg-neutral-950 font-[family-name:var(--font-roboto)] text-white antialiased">
+        <StructuredData />
         {children}
       </body>
     </html>
