@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Oswald, Roboto } from "next/font/google";
+import { StructuredData } from "@/components/site/structured-data";
 import "./globals.css";
 
 const oswald = Oswald({
@@ -94,6 +95,7 @@ export default function RootLayout({
       className={`${oswald.variable} ${roboto.variable} scroll-smooth`}
     >
       <body className="overflow-x-hidden bg-neutral-950 font-[family-name:var(--font-roboto)] text-white antialiased">
+        <StructuredData />
         {children}
       </body>
     </html>
