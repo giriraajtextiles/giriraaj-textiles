@@ -53,14 +53,6 @@ export const metadata: Metadata = {
       "3-ply polyester and polypropylene yarn for industrial bag closing. For distributors, export agents, and domestic buyers. Beawar, Rajasthan.",
     url: "/",
     siteName: "Giriraaj Textiles",
-    images: [
-      {
-        url: "/3-15-blue.jpg",
-        width: 1200,
-        height: 1200,
-        alt: "Polyester yarn from Giriraaj Textiles",
-      },
-    ],
     locale: "en_IN",
     type: "website",
   },
@@ -69,7 +61,6 @@ export const metadata: Metadata = {
     title: "Giriraaj Textiles",
     description:
       "3-ply polyester and polypropylene yarn for industrial bag closing. Beawar, Rajasthan.",
-    images: ["/3-15-blue.jpg"],
   },
   robots: {
     index: true,
