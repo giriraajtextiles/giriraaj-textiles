@@ -77,6 +77,7 @@ export const yarnLines: YarnLine[] = [
       { label: "Material", value: "Recycled and virgin" },
       { label: "Colours", value: `${polyesterColours.join(", ")}, on request` },
       { label: "MOQ", value: "1,000 cones" },
+      { label: "HSN", value: "5509" },
     ],
   },
   {
