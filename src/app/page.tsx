@@ -22,8 +22,8 @@ export default function HomePage() {
           <p className={`${display} text-xs tracking-[0.2em] ${t.eyebrow}`}>
             YARN LINES
           </p>
-          <h2 className={`${display} mt-3 text-3xl font-bold uppercase sm:text-4xl`}>
-            What we manufacture
+          <h2 className={`${display} mt-3 text-3xl font-bold uppercase text-balance sm:text-4xl`}>
+            What we process and supply
           </h2>
           <p className={`mt-4 max-w-lg ${t.body}`}>
             Two yarn lines for bag closing. Each has its own specifications and
@@ -67,16 +67,16 @@ export default function HomePage() {
         >
           <div>
             <p className={`${display} text-xs tracking-[0.2em] ${t.eyebrow}`}>
-              MANUFACTURER
+              YARN PROCESSOR
             </p>
             <p className={`mt-3 max-w-md ${t.body}`}>
-              GST-registered in Beawar since 2025. Consistent monthly production
-              with stock dispatching from Rajasthan.
+              GST-registered in Beawar since 2025. Yarn is rewound onto cones and
+              dispatched from Rajasthan.
             </p>
           </div>
           <Link
             href="/about"
-            className={`${display} shrink-0 text-sm font-semibold uppercase tracking-wider ${t.link}`}
+            className={`${display} inline-flex min-h-11 shrink-0 items-center text-sm font-semibold uppercase tracking-wider ${t.link}`}
           >
             About us
           </Link>

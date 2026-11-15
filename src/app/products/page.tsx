@@ -15,14 +15,14 @@ export const metadata: Metadata = {
 export default function ProductsPage() {
   return (
     <SiteChrome active="products">
-      <PageHeader eyebrow="PRODUCTS" title="Yarn lines">
+      <PageHeader title="Yarn lines">
         <p>
           Polyester yarn and polypropylene yarn for industrial bag closing.
           Select a line for specifications and enquiry.
         </p>
       </PageHeader>
 
-      <section className={`${shell} py-16 sm:py-20`}>
+      <section className={`${shell} pt-10 pb-16 sm:pt-12 sm:pb-24`}>
         <div className="grid gap-px bg-white/10 sm:grid-cols-2">
           {yarnLines.map((line) => (
             <Link

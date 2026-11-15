@@ -13,44 +13,44 @@ const premisesPhotos = [
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Giriraaj Textiles manufactures bag closing yarn in Beawar, Rajasthan. GST-registered since 2025.",
+    "Giriraaj Textiles is a yarn processor and supplier in Beawar, Rajasthan. GST-registered since 2025.",
   ...pageMeta("/about"),
 };
 
 export default function AboutPage() {
   return (
     <SiteChrome active="about">
-      <PageHeader eyebrow="ABOUT" title="Giriraaj Textiles">
+      <PageHeader title="Giriraaj Textiles">
         <p>
-          Yarn manufacturer in Beawar, Rajasthan. Serving distributors, export
-          agents, and domestic buyers.
+          Yarn processor and supplier in Beawar, Rajasthan. Domestic supply
+          across India; export through partners on enquiry.
         </p>
       </PageHeader>
 
-      <section className={`${shell} max-w-2xl py-16 sm:py-20`}>
-        <div className="space-y-6 leading-relaxed text-white/65">
+      <section className={`${shell} pt-10 pb-16 sm:pt-12 sm:pb-24`}>
+        <div className="max-w-2xl space-y-6 text-pretty leading-relaxed text-white/65">
           <p>
-            Proprietorship under S Agarwal, GST-registered, manufacturing in
-            Beawar since 2025. We produce 3-ply polyester yarn and polypropylene
+            Proprietorship under S Agarwal, GST-registered, processing yarn in
+            Beawar since 2025. We supply 3-ply polyester yarn and polypropylene
             yarn for industrial bag lines.
           </p>
           <p>
-            Consistent monthly production with stock dispatching from Rajasthan.
-            Domestic and export enquiries welcome.
+            Consistent monthly supply. Stock is rewound onto cones in Beawar and
+            dispatched from Rajasthan.
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-3 gap-2 sm:gap-3">
+        <div className="-mx-6 mt-12 flex snap-x snap-mandatory gap-3 overflow-x-auto px-6 pb-1 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 sm:pb-0 [&::-webkit-scrollbar]:hidden">
           {premisesPhotos.map((photo) => (
             <div
               key={photo.src}
-              className="relative aspect-[3/4] overflow-hidden bg-neutral-900"
+              className="relative aspect-[3/4] w-[72vw] shrink-0 snap-start overflow-hidden bg-neutral-900 sm:w-auto"
             >
               <Image
                 src={photo.src}
                 alt={photo.alt}
                 fill
-                sizes="(max-width: 640px) 33vw, 215px"
+                sizes="(max-width: 640px) 72vw, 33vw"
                 className="object-cover"
               />
             </div>
@@ -59,7 +59,7 @@ export default function AboutPage() {
 
         <Link
           href="/contact"
-          className={`${display} mt-12 inline-block text-sm font-semibold uppercase tracking-wider text-white underline underline-offset-4`}
+          className={`${display} mt-10 inline-flex min-h-11 items-center text-sm font-semibold uppercase tracking-wider text-white underline underline-offset-4`}
         >
           Get in touch →
         </Link>
