@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ADDRESS, MAPS_HREF } from "@/lib/site";
+import { ADDRESS, GSTIN, MAPS_HREF } from "@/lib/site";
 import { themes, type SiteTheme } from "@/lib/theme";
 
 const oswald = "font-[family-name:var(--font-oswald)]";
@@ -30,20 +30,20 @@ export function SiteChrome({
 
   return (
     <div className={`${roboto} min-h-screen ${t.page}`}>
-      <header className="absolute inset-x-0 top-0 z-20 px-6 py-5 sm:px-10">
-        <div className="flex items-center justify-between">
+      <header className="absolute inset-x-0 top-0 z-20 px-6 py-2 sm:px-10 sm:py-3">
+        <div className="flex flex-wrap items-center justify-between gap-y-1">
           <Link
             href="/"
-            className={`${oswald} text-sm font-semibold tracking-[0.2em] no-underline ${t.headerBrand}`}
+            className={`${oswald} inline-flex min-h-11 items-center text-sm font-semibold tracking-[0.2em] no-underline ${t.headerBrand}`}
           >
             GIRIRAAJ TEXTILES
           </Link>
-          <nav className="flex gap-6 text-xs font-medium uppercase tracking-wider">
+          <nav className="ml-auto flex items-center gap-0.5 text-xs font-medium uppercase tracking-wider sm:gap-2">
             {links.map((link) => (
               <Link
                 key={link.key}
                 href={link.href}
-                className={`no-underline ${
+                className={`inline-flex min-h-11 items-center px-2 no-underline ${
                   active === link.key ? t.navActive : t.navIdle
                 }`}
               >
@@ -57,10 +57,11 @@ export function SiteChrome({
       <footer className={`border-t px-6 py-8 text-sm sm:px-10 ${t.footer}`}>
         <div className={shell}>
           <p className="m-0">Domestic dispatch from Beawar · GST invoicing</p>
+          <p className="m-0 mt-1">GSTIN {GSTIN}</p>
           <p className="m-0 mt-1">
             <a
               href={MAPS_HREF}
-              className="no-underline underline-offset-4 hover:underline"
+              className="inline-flex min-h-11 items-center no-underline underline-offset-4 hover:underline"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -74,12 +75,10 @@ export function SiteChrome({
 }
 
 export function PageHeader({
-  eyebrow,
   title,
   children,
   theme = "dark",
 }: {
-  eyebrow?: string;
   title: string;
   children?: React.ReactNode;
   theme?: SiteTheme;
@@ -87,17 +86,18 @@ export function PageHeader({
   const t = themes[theme];
 
   return (
-    <div className={`${shell} border-b py-24 sm:py-28 ${t.pageHeaderBorder}`}>
-      {eyebrow ? (
-        <p className={`${oswald} text-xs tracking-[0.2em] ${t.eyebrow}`}>
-          {eyebrow}
-        </p>
-      ) : null}
-      <h1 className={`${oswald} mt-3 text-4xl font-bold uppercase sm:text-5xl`}>
+    <div
+      className={`${shell} border-b pb-8 pt-32 sm:pb-10 sm:pt-36 ${t.pageHeaderBorder}`}
+    >
+      <h1
+        className={`${oswald} text-balance text-4xl font-bold uppercase sm:text-5xl`}
+      >
         {title}
       </h1>
       {children ? (
-        <div className={`mt-4 max-w-xl ${t.pageHeaderBody}`}>{children}</div>
+        <div className={`mt-4 max-w-lg text-pretty ${t.pageHeaderBody}`}>
+          {children}
+        </div>
       ) : null}
     </div>
   );
