@@ -1,6 +1,6 @@
 # Giriraaj Textiles Website
 
-This is the website for **Giriraaj Textiles**, my father's textile business.
+This is the website for **Giriraaj Textiles**, my mother's yarn business.
 
 This repository is not a demo project, tutorial, or fictional product. It is a real business website built to give Giriraaj Textiles a clean online presence and make it easier for customers to understand the business, browse its positioning, and get in touch.
 
@@ -21,5 +21,5 @@ The goal was to create a fast, simple, and professional website that feels trust
 
 ## Notes
 
-The source code is kept private because this is a website for a real business.
+The source code is public.
 

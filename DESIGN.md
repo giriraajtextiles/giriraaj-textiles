@@ -1,7 +1,7 @@
 <!-- SEED: re-run /impeccable document once there's code to capture the actual tokens and components. -->
 ---
 name: Giriraaj Textiles
-description: Industrial-grade thread manufacturing and distribution
+description: Yarn processing, rewinding and supply
 ---
 
 # Design System: Giriraaj Textiles
@@ -10,7 +10,7 @@ description: Industrial-grade thread manufacturing and distribution
 
 **Creative North Star: "Precision Engineered"**
 
-The design philosophy marries industrial manufacturing reliability with the sleek, high-end technical execution of modern software companies like Air.inc, Stripe, and Linear. The aesthetic is heavily choreographed, relying on precise scroll-driven sequences to tell the story of the manufacturing process, supported by a deliberate, multi-role full color palette. It explicitly rejects the overly rounded, floating-blob "AI slop" style, as well as the garish neon glows of Web3 landing pages.
+The design philosophy marries industrial reliability with the sleek, high-end technical execution of modern software companies like Air.inc, Stripe, and Linear. The aesthetic is heavily choreographed, relying on precise scroll-driven sequences to tell the story of yarn processing and dispatch, supported by a deliberate, multi-role full color palette. It explicitly rejects the overly rounded, floating-blob "AI slop" style, as well as the garish neon glows of Web3 landing pages.
 
 **Key Characteristics:**
 - Structural, geometric, and clean.
