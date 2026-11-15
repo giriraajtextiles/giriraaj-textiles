@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader, SiteChrome, display, shell } from "@/components/site/chrome";
-import { ADDRESS, PHONE_DISPLAY, TEL_HREF, WA_GENERAL } from "@/lib/site";
+import { ADDRESS, MAPS_HREF, PHONE_DISPLAY, TEL_HREF, WA_GENERAL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Enquire",
@@ -36,7 +36,16 @@ export default function ContactPage() {
             {PHONE_DISPLAY}
           </a>
         </p>
-        <p className="mt-4 text-sm text-white/60">{ADDRESS}</p>
+        <p className="mt-4 text-sm text-white/60">
+          <a
+            href={MAPS_HREF}
+            className="no-underline underline-offset-4 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {ADDRESS}
+          </a>
+        </p>
       </section>
     </SiteChrome>
   );

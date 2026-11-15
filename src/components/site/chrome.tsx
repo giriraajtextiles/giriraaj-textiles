@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ADDRESS, MAPS_HREF } from "@/lib/site";
 import { themes, type SiteTheme } from "@/lib/theme";
 
 const oswald = "font-[family-name:var(--font-oswald)]";
@@ -56,6 +57,16 @@ export function SiteChrome({
       <footer className={`border-t px-6 py-8 text-sm sm:px-10 ${t.footer}`}>
         <div className={shell}>
           <p className="m-0">Domestic dispatch from Beawar · GST invoicing</p>
+          <p className="m-0 mt-1">
+            <a
+              href={MAPS_HREF}
+              className="no-underline underline-offset-4 hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {ADDRESS}
+            </a>
+          </p>
         </div>
       </footer>
     </div>
