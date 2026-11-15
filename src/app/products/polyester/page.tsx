@@ -9,6 +9,7 @@ import {
 import { ProductReferenceImage } from "@/components/site/product-image";
 import { polyesterPhotos, yarnLines } from "@/lib/products";
 import { WA_POLYESTER } from "@/lib/site";
+import { pageMeta } from "@/lib/seo";
 
 const line = yarnLines.find((l) => l.id === "polyester")!;
 
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   title: "Polyester yarn",
   description:
     "3-ply polyester yarn for bag closing. Counts 10, 12, and 15. Recycled and virgin. MOQ 1,000 cones. Giriraaj Textiles, Beawar.",
-  alternates: { canonical: "/products/polyester" },
+  ...pageMeta("/products/polyester"),
 };
 
 export default function PolyesterPage() {

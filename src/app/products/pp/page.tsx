@@ -9,6 +9,7 @@ import {
 import { ProductReferenceImage } from "@/components/site/product-image";
 import { polypropylenePhotos, yarnLines } from "@/lib/products";
 import { WA_PP } from "@/lib/site";
+import { pageMeta } from "@/lib/seo";
 
 const line = yarnLines.find((l) => l.id === "pp")!;
 
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   title: "Polypropylene yarn",
   description:
     "Polypropylene yarn for woven sack bag closing. Specifications on enquiry. Giriraaj Textiles, Beawar, Rajasthan.",
-  alternates: { canonical: "/products/pp" },
+  ...pageMeta("/products/pp"),
 };
 
 export default function PolypropylenePage() {

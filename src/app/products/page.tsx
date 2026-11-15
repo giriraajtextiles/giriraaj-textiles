@@ -3,12 +3,13 @@ import Link from "next/link";
 import { PageHeader, SiteChrome, display, shell } from "@/components/site/chrome";
 import { ProductCoverImage } from "@/components/site/product-image";
 import { yarnLines } from "@/lib/products";
+import { pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Products",
   description:
     "Polyester yarn and polypropylene yarn for industrial bag closing. 3-ply counts 10, 12, and 15. Beawar, Rajasthan.",
-  alternates: { canonical: "/products" },
+  ...pageMeta("/products"),
 };
 
 export default function ProductsPage() {

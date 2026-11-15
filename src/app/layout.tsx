@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Oswald, Roboto } from "next/font/google";
 import { StructuredData } from "@/components/site/structured-data";
+import { baseOpenGraph } from "@/lib/seo";
 import "./globals.css";
 
 const oswald = Oswald({
@@ -47,15 +48,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Giriraaj Textiles" }],
   creator: "Giriraaj Textiles",
   publisher: "Giriraaj Textiles",
-  openGraph: {
-    title: "Giriraaj Textiles",
-    description:
-      "3-ply polyester and polypropylene yarn for industrial bag closing. For distributors, export agents, and domestic buyers. Beawar, Rajasthan.",
-    url: "/",
-    siteName: "Giriraaj Textiles",
-    locale: "en_IN",
-    type: "website",
-  },
+  openGraph: { ...baseOpenGraph, url: "/" },
   twitter: {
     card: "summary_large_image",
     title: "Giriraaj Textiles",

@@ -4,9 +4,10 @@ import { SiteChrome, display, shell, themeClasses } from "@/components/site/chro
 import { Hero } from "@/components/site/hero";
 import { ProductCoverImage } from "@/components/site/product-image";
 import { yarnLines } from "@/lib/products";
+import { pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/" },
+  ...pageMeta("/"),
 };
 
 export default function HomePage() {

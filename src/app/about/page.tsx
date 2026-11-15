@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { PageHeader, SiteChrome, display, shell } from "@/components/site/chrome";
+import { pageMeta } from "@/lib/seo";
 
 const premisesPhotos = [
   { src: "/exterior2.webp", alt: "Giriraaj Textiles premises, Beawar" },
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Giriraaj Textiles manufactures bag closing yarn in Beawar, Rajasthan. GST-registered since 2025.",
-  alternates: { canonical: "/about" },
+  ...pageMeta("/about"),
 };
 
 export default function AboutPage() {
