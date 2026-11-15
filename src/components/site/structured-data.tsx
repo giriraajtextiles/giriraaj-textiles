@@ -34,7 +34,10 @@ const structuredData = {
       image: `${SITE_URL}${line.coverImage}`,
       url: `${SITE_URL}/products/${line.id}`,
       manufacturer: { "@id": BUSINESS_ID },
-      additionalProperty: line.specs.map((spec) => ({
+      // "Material" is held back until the recycled/virgin claim is confirmed.
+      additionalProperty: line.specs
+        .filter((spec) => spec.label !== "Material")
+        .map((spec) => ({
         "@type": "PropertyValue",
         name: spec.label,
         value: spec.value,
