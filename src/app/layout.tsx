@@ -22,6 +22,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
+  themeColor: "#0a0a0a",
 };
 
 export const metadata: Metadata = {
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s | Giriraaj Textiles",
   },
   description:
-    "3-ply polyester and polypropylene yarn for industrial bag closing. Counts 10, 12, and 15. Recycled and virgin. For distributors, export agents, and domestic buyers. Beawar, Rajasthan.",
+    "3-ply polyester and polypropylene yarn for industrial bag closing. Counts 10, 12, and 15. Recycled and virgin. Supplied across India; export through partners on enquiry. Beawar, Rajasthan.",
   keywords: [
     "bag closing yarn",
     "polyester yarn",

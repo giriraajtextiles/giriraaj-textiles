@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const baseOpenGraph = {
   title: "Giriraaj Textiles",
   description:
-    "3-ply polyester and polypropylene yarn for industrial bag closing. For distributors, export agents, and domestic buyers. Beawar, Rajasthan.",
+    "3-ply polyester and polypropylene yarn for industrial bag closing. Supplied across India; export through partners on enquiry. Beawar, Rajasthan.",
   siteName: "Giriraaj Textiles",
   locale: "en_IN",
   type: "website",

@@ -23,32 +23,32 @@ export const metadata: Metadata = {
 export default function PolypropylenePage() {
   return (
     <SiteChrome active="products">
-      <PageHeader eyebrow="PRODUCTS" title={line.name}>
+      <PageHeader title={line.name}>
         <p>{line.summary}</p>
       </PageHeader>
 
       <section
-        className={`${shell} grid gap-12 py-16 sm:grid-cols-[1fr_16rem] sm:py-20`}
+        className={`${shell} grid gap-12 pt-10 pb-16 sm:grid-cols-[1fr_16rem] sm:pt-12 sm:pb-24`}
       >
         <div>
-          <h2 className={`${display} text-lg font-bold uppercase`}>
+          <h2 className={`${display} text-xl font-bold uppercase`}>
             Specifications
           </h2>
           <div className="mt-6">
             <SpecList specs={line.specs} />
           </div>
 
-          <h2 className={`${display} mt-12 text-lg font-bold uppercase`}>
+          <h2 className={`${display} mt-12 text-xl font-bold uppercase`}>
             Applications
           </h2>
-          <p className="mt-4 text-sm leading-relaxed text-white/60">
+          <p className="mt-4 max-w-prose text-sm leading-relaxed text-white/60">
             Closing yarn for open-mouth woven sacks and industrial bags. Full
             technical specifications shared on enquiry.
           </p>
 
           <a
             href={WA_PP}
-            className={`${display} mt-12 inline-flex min-h-12 items-center bg-white px-8 text-sm font-semibold uppercase tracking-wider text-neutral-950 no-underline`}
+            className={`${display} press mt-12 inline-flex min-h-12 items-center bg-white px-8 text-sm font-semibold uppercase tracking-wider text-neutral-950 no-underline`}
             target="_blank"
             rel="noopener noreferrer"
           >

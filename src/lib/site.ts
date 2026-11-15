@@ -1,6 +1,7 @@
 export const PHONE = "8005916878";
 export const PHONE_DISPLAY = "+91 80059 16878";
 export const TEL_HREF = `tel:+91${PHONE}`;
+export const GSTIN = "08AGPPA1183M1Z5";
 export const ADDRESS = "6B, Chandra Vihar Colony, Beawar, Rajasthan";
 export const MAPS_HREF = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADDRESS)}`;
 

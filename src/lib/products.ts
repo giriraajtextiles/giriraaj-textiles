@@ -75,6 +75,10 @@ export const yarnLines: YarnLine[] = [
       { label: "Construction", value: "3-ply" },
       { label: "Count", value: polyesterCounts.join(", ") },
       { label: "Material", value: "Recycled and virgin" },
+      {
+        label: "Cone weight",
+        value: "250 g and 350 g (gross, including a 25 g cone)",
+      },
       { label: "Colours", value: `${polyesterColours.join(", ")}, on request` },
       { label: "MOQ", value: "1,000 cones" },
       { label: "HSN", value: "5509" },
