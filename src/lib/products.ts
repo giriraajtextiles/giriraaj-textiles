@@ -22,6 +22,18 @@ export const polyesterPhotos = [
     label: "Cream",
     count: "15",
   },
+  {
+    src: "/3-15-cream-1.jpeg",
+    alt: "Cream polyester yarn cone, 15 count, viewed from above",
+    label: "Cream",
+    count: "15",
+  },
+  {
+    src: "/3-15-cream-2.jpeg",
+    alt: "Cream polyester yarn cone, 15 count, second sample",
+    label: "Cream",
+    count: "15",
+  },
 ] as const;
 
 /** @deprecated Use polyesterPhotos */
@@ -35,6 +47,10 @@ export const polypropylenePhotos = [
   {
     src: "/pp-2.jpeg",
     alt: "Polypropylene bag closing yarn cone, angled view",
+  },
+  {
+    src: "/pp-1.jpeg",
+    alt: "Polypropylene bag closing yarn cone, viewed from above",
   },
 ] as const;
 

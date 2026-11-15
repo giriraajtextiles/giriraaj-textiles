@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { PageHeader, SiteChrome, display, shell } from "@/components/site/chrome";
+
+const premisesPhotos = [
+  { src: "/exterior2.webp", alt: "Giriraaj Textiles premises, Beawar" },
+  { src: "/exterior1.webp", alt: "Giriraaj Textiles premises, Beawar" },
+  { src: "/exterior3.webp", alt: "Giriraaj Textiles premises, Beawar" },
+] as const;
 
 export const metadata: Metadata = {
   title: "About",
@@ -30,6 +37,23 @@ export default function AboutPage() {
             Consistent monthly production with stock dispatching from Rajasthan.
             Domestic and export enquiries welcome.
           </p>
+        </div>
+
+        <div className="mt-12 grid grid-cols-3 gap-2 sm:gap-3">
+          {premisesPhotos.map((photo) => (
+            <div
+              key={photo.src}
+              className="relative aspect-[3/4] overflow-hidden bg-neutral-900"
+            >
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                sizes="(max-width: 640px) 33vw, 215px"
+                className="object-cover"
+              />
+            </div>
+          ))}
         </div>
 
         <Link

@@ -59,12 +59,15 @@ export default function PolypropylenePage() {
           <p className={`${display} text-xs tracking-[0.15em] text-white/60`}>
             REFERENCE
           </p>
-          <figure className="m-0 mt-4">
-            <ProductReferenceImage
-              src={polypropylenePhotos[0].src}
-              alt={polypropylenePhotos[0].alt}
-              lineId="pp"
-            />
+          <figure className="m-0 mt-4 space-y-3">
+            {polypropylenePhotos.map((p) => (
+              <ProductReferenceImage
+                key={p.src}
+                src={p.src}
+                alt={p.alt}
+                lineId="pp"
+              />
+            ))}
           </figure>
         </aside>
       </section>

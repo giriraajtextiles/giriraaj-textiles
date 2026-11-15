@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import {
   PageHeader,
   SiteChrome,
@@ -7,6 +6,7 @@ import {
   display,
   shell,
 } from "@/components/site/chrome";
+import { ProductReferenceImage } from "@/components/site/product-image";
 import { polyesterPhotos, yarnLines } from "@/lib/products";
 import { WA_POLYESTER } from "@/lib/site";
 
@@ -63,15 +63,11 @@ export default function PolyesterPage() {
           <div className="mt-4 space-y-3">
             {polyesterPhotos.map((p) => (
               <figure key={p.src} className="m-0">
-                <div className="relative aspect-[4/3] overflow-hidden bg-neutral-900">
-                  <Image
-                    src={p.src}
-                    alt={p.alt}
-                    fill
-                    className="object-cover opacity-80"
-                    sizes="256px"
-                  />
-                </div>
+                <ProductReferenceImage
+                  src={p.src}
+                  alt={p.alt}
+                  lineId="polyester"
+                />
                 <figcaption className="mt-1.5 flex justify-between text-xs text-white/60">
                   <span>{p.label}</span>
                   <span>{p.count} count</span>
