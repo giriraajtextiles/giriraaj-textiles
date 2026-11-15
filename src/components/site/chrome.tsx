@@ -33,7 +33,7 @@ export function SiteChrome({
       <header className="absolute inset-x-0 top-0 z-20 px-6 py-5 sm:px-10">
         <div className="flex items-center justify-between">
           <Link
-            href={theme === "stone" ? "/demo" : "/"}
+            href="/"
             className={`${oswald} text-sm font-semibold tracking-[0.2em] no-underline ${t.headerBrand}`}
           >
             GIRIRAAJ TEXTILES
